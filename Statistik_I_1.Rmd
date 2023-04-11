@@ -732,13 +732,13 @@ class: top, left
 
 * Man spricht von einem **Hypothesenpaar:**
 
-  * **Nullhypothese (H0):** Der hypothetisierte Effekt besteht nicht.
+  * **Nullhypothese $(H_0)$:** Der hypothetisierte Effekt besteht nicht.
 
-  * **Alternativhypothese (H1):** Der hypothetisierte Effekt besteht
+  * **Alternativhypothese $(H_1)$:** Der hypothetisierte Effekt besteht
 
-* In der Forschung hofft man oft, dass die H1 zufrifft (Hier steckt der angenommene Effekt drin)
+* In der Forschung hofft man oft, dass die $H_1$ zufrifft (Hier steckt der angenommene Effekt drin)
 
-* Man versucht **"Die H0 zu verwerfen"** (Hypothesentest kommt später)
+* Man versucht **"Die $H_0$ zu verwerfen"** (Hypothesentest kommt später)
 
 ---
 class: top, left
@@ -750,17 +750,17 @@ Beispiel: **(Ungerichtete) Forschungshypothese:**
 
 "Männer und Frauen sind im Schnitt unterschiedlich groß."
 
-**H0:** Es besteht **kein Unterschied** zwischen der durchschnittlichen Größe der Männer (Mittelwert) und der durchschnittlichen Größe der Frauen.
+**$H_0$** Es besteht **kein Unterschied** zwischen der durchschnittlichen Größe der Männer (Mittelwert) und der durchschnittlichen Größe der Frauen.
 
-**H1:** Es besteht **ein Unterschied** zwischen der durchschnittlichen Größe der Männer (Mittelwert) und der durchschnittlichen Größe der Frauen.
+**$H_1$** Es besteht **ein Unterschied** zwischen der durchschnittlichen Größe der Männer (Mittelwert) und der durchschnittlichen Größe der Frauen.
 
 **Ableitung statistische Hypothese:**
 
-**H0:** Mittelwert Männer - Mittelwert Frauen $=$ 0
+**$H_0$** Mittelwert Männer - Mittelwert Frauen $=$ 0
 
 $\rightarrow$ **In Zahlen:** Wenn kein Unterschied besteht ist Differenz  = 0  (z.B. 10 - 10 = 0)
 
-**H1:** Mittelwert Männer - Mittelwert Frauen $\neq$ 0
+**$H_1$** Mittelwert Männer - Mittelwert Frauen $\neq$ 0
 
 $\rightarrow$ **In Zahlen:** Wenn ein Unterschied besteht ist Differenz $\neq$  0 (z.B. 15 - 10 = 5)
 
@@ -1505,5 +1505,4 @@ class: top, left
 
 ]
 
-[**Link zur Wissensüberprüfung**](https://docs.google.com/forms/d/e/1FAIpQLSfAAWpZWqxU4Bw5LzVFRtYo7RvCIt4BRAEWCHx6XvlePfEQzw/viewform?usp=sf_link)
 
