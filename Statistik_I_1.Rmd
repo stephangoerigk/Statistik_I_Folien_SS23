@@ -574,7 +574,7 @@ class: top, left
   * fehlerfreier
   * manche Verfahren zu komplex
   * Datensätze zu groß (Big Data)
-  * bestimmte Verfahren basieren auf **Iteration** (z.B. Monte-Carlo Simulation teil 10.000x wiederholt)
+  * bestimmte Verfahren basieren auf **Iteration** (z.B. Monte-Carlo Simulation teils 10.000x wiederholt)
   
   $\rightarrow$ würde per Hand Jahre dauern
 
