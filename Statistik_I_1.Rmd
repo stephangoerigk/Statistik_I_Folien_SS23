@@ -1430,7 +1430,7 @@ df = data.frame(x = paste0("x", rep(1:N)),
 )
 t = as.data.frame(t(as.data.frame(paste0(prop.table(table(df$Tier))* 100, "%"))))
 rownames(t) = NULL
-
+# colnames(t) = c("Adler", "Delphin", "Elefant", "Goldfisch", "Hund", "Katze", "Maulwurf")
 kable(t, col.names = NULL)
 ```
 
