@@ -1310,7 +1310,7 @@ $\sum\limits _{i=1}^{5}x_{i}$ = `r paste(df$Kinder[1:5], collapse = " + ")` = `r
 
 Summe der Variable "Anzahl Kinder" für die letzten 5 Personen aus unserer Datenmatrix:
 
-$\sum\limits _{i=5}^{10}x_{i}$ = `r paste(df$Kinder[6:10], collapse = " + ")` = `r sum(df$Kinder[6:10])`
+$\sum\limits _{i=6}^{10}x_{i}$ = `r paste(df$Kinder[6:10], collapse = " + ")` = `r sum(df$Kinder[6:10])`
 
 ---
 class: top, left
