@@ -108,11 +108,11 @@ Zwei häufige Arten statistischer Kenntwerte:
 
 1. **Maße der zentralen Tendenz** (Lagemaße)
 
-* repräsentieren alle Einzelwerte der Verteilung zusammenfassend
+  * repräsentieren alle Einzelwerte der Verteilung zusammenfassend
 
 2. **Streuungsmaße** (Dispersionsmaße)
 
-* geben Auskunft über Variation der Messwerte
+  * geben Auskunft über Variation der Messwerte
 
 ---
 class: top, left
@@ -353,7 +353,8 @@ df = as.data.frame(t(df))
 kable(df[,], col.names = NULL)
 ```
 
-.left[Formel:] 
+.left[Formel:]
+<small>
 $$s^2=\frac{\sum\limits _{i=1}^{n}(x_{i}-\bar{x})^2}{n}$$
 
 $$\sigma^2=\frac{\sum\limits _{i=1}^{n}(x_{i}-\bar{x})^2}{n-1}$$
@@ -586,6 +587,7 @@ kable(df[,], col.names = NULL)
 ```
 ]
 .left[Formel:] 
+<small>
 
 $$s=\sqrt{\frac{\sum\limits _{i=1}^{n}(x_{i}-\bar{x})^2}{n}}$$
 $$\sigma=\sqrt{\frac{\sum\limits _{i=1}^{n}(x_{i}-\bar{x})^2}{n-1}}$$
