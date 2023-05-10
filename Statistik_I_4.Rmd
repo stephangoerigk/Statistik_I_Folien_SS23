@@ -564,7 +564,7 @@ kable(df[,], col.names = NULL)%>%
 ```{r echo = F, out.width="320px", out.height="300px"}
 ggplot(df2, aes(y = Konzentration, x = Schlaf)) +
 geom_point(size = 4) +
-  labs(y = "Schlaf") +
+  labs(y = "Konzentration", x = "Schlaf") +
   theme_classic() +
   theme(text = element_text(size = 25))
 ```
@@ -613,7 +613,7 @@ kable(df[,], col.names = NULL)%>%
 ggplot(df2, aes(y = Konzentration, x = Schlaf)) +
 geom_point(size = 4) +
   geom_smooth(method = "lm", se = F) +
-  labs(y = "Konzentration") +
+  labs(y = "Konzentration", x = "Schlaf") +
   theme_classic() +
   theme(text = element_text(size = 25))
 ```
@@ -701,7 +701,7 @@ class: top, left
 
 Beispiel:
 
-2 Kategoriale Variablen: (1) Entzugsstatus heroinabhängiger Patienten (vor dem Entzug = A, während des Entzugs = B) und (2) Tremor (ja/nein)
+2 Kategoriale Variablen: (1) Entzugsstatus heroinabhängiger Patienten (während des Entzugs = A, vor dem Entzug = B) und (2) Tremor (ja/nein)
 
 ```{r echo = F}
 set.seed(123)
