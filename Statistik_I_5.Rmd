@@ -105,7 +105,7 @@ class: top, left
 #### Logik des Schließens von Stichprobe auf Population (Einzelschritte folgen)
 
 .center[
-```{r eval = TRUE, echo = F, out.width = "900px"}
+```{r eval = TRUE, echo = F, out.width = "450px"}
 knitr::include_graphics("bilder/Population.png")
 ```
 ]

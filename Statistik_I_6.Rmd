@@ -58,7 +58,7 @@ class: middle, left
 # Statistik I
 
 ### Einheit 6: Stichprobe, Grundgesamtheit und Stichprobenfehler
-##### 23.11.2022 | Dr. phil. Stephan Goerigk
+##### 17.05.2023 | Prof. Dr. phil. Stephan Goerigk
 
 ---
 class: top, left
