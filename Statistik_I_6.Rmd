@@ -303,9 +303,9 @@ Leider werden in der Praxis oft keine einfachen Zufallsstichproben gezogen. Häu
 **1. Fehlende Repräsentativität:**
 <small>
 * Eine bestimmte Teilgruppe von Personen in der Population hat eine höhere
-Wahrscheinlichkeit, in die Stichprobe gezogen zu werden, als andere Personen.
+Wahrscheinlichkeit, in die Stichprobe gezogen zu werden als andere Personen.
 * Beispiel: Nur Personen die Psychologie studieren haben eine echt positive
-Wahrscheinlichkeit, gezogen werden.
+Wahrscheinlichkeit gezogen werden.
 * Folge: Die interessierende Maßzahl in der Population entspricht nicht mehr dem
 Parameter der jeweiligen Wahrscheinlichkeitsverteilung. Inferenzstatistische Verfahren, die hierauf aufbauen, sind verzerrt.
 
@@ -409,7 +409,11 @@ class: top, left
 
 * Zur Erinnerung (sehr wichtig!): Aussagen über Parameter sind im Fall von einfachen Zufallsstichproben gleichbedeutend mit Aussagen über die uns eigentlich interessierenden deskriptivstatistischen Maßzahlen in der Population:
 
+**Punktschätzung:**
+
 * „Wir gehen auf Basis unserer Stichprobe davon aus, dass der Parameter $𝜋$ gleich 0.45 ist.“ ist gleichbedeutend mit „Wir gehen auf Basis unserer Stichprobe davon aus, dass die relative Häufigkeit der uns interessierenden Messwertausprägung in der Population gleich 0.45 ist.“
+
+**Intervallschätzung**
 
 * „Wir gehen auf Basis unserer Stichprobe davon aus, dass der Parameter $𝜇$ im Bereich zwischen 101 und 108 liegt.“ ist gleichbedeutend mit „Wir gehen auf Basis unserer Stichprobe davon aus, dass der Mittelwert der uns interessierenden stetigen Variable in der Population im Bereich zwischen 101 und 108 liegt.“
 
@@ -751,7 +755,7 @@ class: top, left
 
 * Der wahre Wert des Parameters sei $𝜃$ = 10
 
-* Beispiel für die Schätzwerte, die aus einer erwartungstreuen Schätzfunktion $\hat{𝜃}$ für $𝜃$ mit **geringem** Standardfehler $SE(\hat{𝜃})$ resultieren könnten:
+* Beispiel für die Schätzwerte, die aus einer erwartungstreuen Schätzfunktion $\hat{𝜃}$ für $𝜃$ mit **hohem** Standardfehler $SE(\hat{𝜃})$ resultieren könnten:
 
 * Zufällige Stichprobe 1: $\hat{𝜃}_{Wert}$ = 10.3
 * Zufällige Stichprobe 2: $\hat{𝜃}_{Wert}$ = 9.8
@@ -872,7 +876,7 @@ Z-Tabelle
 
 * Zusammensetzen des z-Werts aus Zeile (bis 1 Stelle nach dem Komma) und Spalte (2. Stelle nach dem Komma)
 
-* Anhand der Tabelle kann abgelesen werden wie wahrscheinlich die Werte einer Verteilung sind (angenommen die Variable ist normalverteilt)
+* Anhand der Tabelle kann abgelesen werden, wie wahrscheinlich die Werte einer Verteilung sind (angenommen die Variable ist normalverteilt)
 
 ---
 class: top, left
@@ -899,6 +903,36 @@ m[1:20,] %>%
 class: top, left
 ### Stichprobe, Grundgesamtheit und Stichprobenfehler
 
+**Standardnormalverteilung (N~0,1):**
+
+Bedeutung der p-Werte
+
+* Die Felder in der Tabelle geben Ihnen die Wahrscheinlichkeit $P$ an, dass genau der ausgewählte z-Wert oder ein kleinerer z-Wert auftritt.
+
+* Die Wahrscheinlichkeit, die Sie in den Feldern der z Tabelle finden, entspricht der Fläche unter der Verteilung.
+
+* Diese  Fläche ist das Integral der Dichtefunktion von $-∞$ bis z.
+
+---
+class: top, left
+### Stichprobe, Grundgesamtheit und Stichprobenfehler
+
+**Standardnormalverteilung (N~0,1):**
+
+Negative Werte in der z-Werte Tabelle:
+
+Wie Sie wahrscheinlich gesehen haben, fängt die z-Tabelle bei 0 an. Was machen Sie also, wenn Ihr gegebener z-Wert negativ ist?
+
+Dafür gibt es einen Trick: Die Standardnormalverteilung ist achsensymmetrisch (die Funktion spiegelt sich also an der y-Achse). Das heißt, sie verläuft links und rechts von der y-Achse genau spiegelverkehrt.
+
+Es gilt: $Φ(−x) = 1−Φ(x)$
+
+Wenn Sie einen negativen z Wert haben, suchen Sie also zunächst den dazugehörigen positiven z-Wert. Dann rechnen Sie 1 minus den positiven z-Wert.
+
+---
+class: top, left
+### Stichprobe, Grundgesamtheit und Stichprobenfehler
+
 #### Nutzen von Wahrscheinlichkeitsverteilungen zur Quantifizierung des Stichprobenfehlers:
 
 **Z.B. Standardnormalverteilung (N~0,1):**
@@ -912,7 +946,7 @@ Beispiel 1:
 * Zunächst berechnen wir den z-Wert für $X=14.5$ (siehe Standardisierung)
 
 $$z=\frac{14.5-11}{\sqrt{5.53}}=1.49$$
-* In der z-Tabelle schlagen wir nach, wie wahrscheinlich ein z-Wert von mindestens 1.49 ist
+* In der z-Tabelle schlagen wir nach, wie wahrscheinlich ein z-Wert von höchstens 1.49 ist
 
 $$P(Z \leq 1.49) = 0.9319$$
 * Mit einer 93%-igen Wahrscheinlichkeit ist ein zufällig aus der Verteilung gezogener Wert nicht größer als 14.5
@@ -929,14 +963,14 @@ Beispiel 2:
 
 * gegeben sei eine normalverteilte Variable X mit Mittelwert von 11 und Varianz von 5.53
 
-* Wie hoch ist die Wahrscheinlichkeit das X mehr als 14.5 Punkte aufweist?
+* Wie hoch ist die Wahrscheinlichkeit, dass X mehr als 14.5 Punkte aufweist?
 
 * Zunächst berechnen wir den z-Wert für $X=14.5$ (siehe Standardisierung)
 
 $$z=\frac{14.5-11}{\sqrt{5.53}}=1.49$$
 * In der z-Tabelle schlagen wir nach, wie wahrscheinlich ein z-Wert von größer als 1.49 ist
 
-$$P(Z > 1.49) = 1-0.9319=0.0681$$
+$$P(Z > 1.49) = 1- P(Z \leq 1.49)= 1-0.9319=0.0681$$
 * Mit einer 6.8%-igen Wahrscheinlichkeit ist ein zufällig aus der Verteilung gezogener Wert größer als 14.5.
 
 
@@ -948,7 +982,7 @@ class: top, left
 
 <small>
 
-* Wir interessieren und für einen unbekannten wahren Parameter $ θ$, der die Verteilung einer Zufallsvariable charakterisiert
+* Wir interessieren und für einen unbekannten wahren Parameter $θ$, der die Verteilung einer Zufallsvariable charakterisiert
 
 * $θ$ wird durch eine Schätzfunktion $\hat{𝜃}$ aus einer (repräsentativen) Stichprobe mit Umfang $n$ geschätzt
 
@@ -959,7 +993,7 @@ class: top, left
 * Bei der Schätzung von Parametern geht es nicht nur darum, Schätzfunktionen zu finden und deren Eigenschaften (Erwartungstreue, Konsistenz, etc.) abzuklären
 * Man möchte auch Intervalle angeben, in welchen $θ$ mit einer gewissen Sicherheit liegt
 
-* Es sei $α$ eine vorgegebene Irrtumswahrscheinlichkeit, und a bzw. b reelle Zahlen, mit a ≤ b. Die Schätzung des Bereiches $ a ≤ θ ≤ b$ mit der Vertrauenswahrscheinlichkeit $(1 − α)$ nennen wir Konfidenzintervall des Parameters θ mit Irrtumswahrscheinlichkeit α
+* Es sei $α$ eine vorgegebene Irrtumswahrscheinlichkeit, und a bzw. b reelle Zahlen, mit a ≤ b. Die Schätzung des Bereiches $a ≤ θ ≤ b$ mit der Vertrauenswahrscheinlichkeit $(1 − α)$ nennen wir Konfidenzintervall des Parameters θ mit Irrtumswahrscheinlichkeit α
 
 * $\hat{𝜃}$ Punktschätzung von $θ$, im Vergleich zur Intervallschätzung
 
@@ -990,7 +1024,7 @@ class: top, left
 
 * Die Normalverteilung ist eine reproduzierende Verteilung
 
-1.  Wir ziehen unabhängige Zufallsstichproben vom Umfang $n$ ziehen und berechnen. in jeder Teilstichprobe den Mittelwert
+1.  Wir ziehen unabhängige Zufallsstichproben vom Umfang $n$ und berechnen in jeder Teilstichprobe den Mittelwert
 
 2. Die Mittelwerte $\bar{x}_n$ aller Zufallsstichproben erzeugen eine Variable $\bar{X}=\frac{1}{n}(X_{1}+X_{2}+...+X_{n})$
 
@@ -1056,7 +1090,7 @@ class: top, left
 
 $$μ_{1,2}=\bar{x} \pm z_{1-\frac{α}{2}}\frac{σ}{\sqrt{n}}$$
 
-* Der Wert für $1-\frac{α}{2} = 1-\frac{.05}{2}=1.96$ muss in der z-Tabelle nachgesehen werden. $α$ wird halbiert, da sich die 5% Fehler auf die untere und obere Grenze des KIs aufteilen.
+* Der z-Wert für $1-\frac{α}{2} = 1-\frac{.05}{2}=1.96$ muss in der z-Tabelle nachgesehen werden. $α$ wird halbiert, da sich die 5% Fehler auf die untere und obere Grenze des KIs aufteilen.
 
 $$μ_{1,2}=98.10 \pm 1.96\frac{15}{\sqrt{234}}= 98.10 \pm 1.92$$
 
@@ -1072,7 +1106,7 @@ class: top, left
 
 * Unbekannte Varianz $σ^2$ wird aus den vorliegenden Daten geschätzt
 
-$$\hat{s}^2=\frac{\sum\limits _{i=1}^{n}(x_{i}-\bar{x})^2}{n-1}$$
+$$\hat{\sigma}^2=s^2=\frac{\sum\limits _{i=1}^{n}(x_{i}-\bar{x})^2}{n-1}$$
 
 Anstelle der Standardnormalverteilung...
 
@@ -1149,12 +1183,11 @@ class: top, left
 * für die wir Erwartungswert und Standardabweichung (Standardfehler) berechnen
 können
 * die erwartungstreu, effizient und konsistent sein sollten
-* mit deren Hilfe wir Parameter (gesuchter Parameter einer Verteilung entspricht interessierte Größe in der Population) aus Stichprobendaten schätzen
+* mit deren Hilfe wir Parameter (gesuchter Parameter einer Verteilung entspricht interessierender Größe in der Population) aus Stichprobendaten schätzen
 
 **Konfidenzintervall**
 * gibt ein Intervall an, in welchem Parameter zur Schätzung des Populationswerts mit einer vorgegebenen Wahrscheinlichkeit (i.d.R. 95%) liegen
 ]
 ]
 
-[**Link zur Wissensüberprüfung**](https://docs.google.com/forms/d/e/1FAIpQLSfyoeahyWszszxLO6xipdtIsI7VREOVBFK6flgeAUw2FAn8Yg/viewform?usp=sf_link)
 
