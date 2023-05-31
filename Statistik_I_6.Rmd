@@ -896,7 +896,7 @@ m[,1] = as.character(m[,1])
 
 m[1:20,] %>%
   kbl() %>%
-  kable_classic(full_width = T, position = "left", font_size = 12)
+  kable_classic(full_width = T, position = "left", font_size = 10)
 ```
 
 ---
