@@ -1099,6 +1099,28 @@ class: top, left
 
 **Standardnormalverteilung (N~0,1):**
 
+**Beispiel: Orientierung in der z-Tabelle**
+
+Aufgabe: Sie suchem den z-Wert 0.35.
+
+**Schritt 1:** Schauen Sie die 1. Spalte an
+
+In der ersten Spalte (senkrecht) finden Sie die ersten zwei Ziffern 0.3 des z-Werts. 
+
+**Schritt 2:** Schauen Sie die 2. Spalte an
+
+Die dritte Ziffer 0.05 (die zweite Nachkommastelle), findet sich in der 3. Spalte.
+
+**Schritt 3:** Wahrscheinlichkeit finden
+
+Das Feld, in dem sich nun die Zeile mit 0.3 und die Spalte mit 0.05 kreuzen, ist die gesuchte Wahrscheinlichkeit für 0.35 oder einen kleineren z-Wert also `\(P(X ≤ 0.35) =0.63683\)`
+
+---
+class: top, left
+### Stichprobe, Grundgesamtheit und Stichprobenfehler
+
+**Standardnormalverteilung (N~0,1):**
+
 Negative Werte in der z-Werte Tabelle:
 
 Wie Sie wahrscheinlich gesehen haben, fängt die z-Tabelle bei 0 an. Was machen Sie also, wenn Ihr gegebener z-Wert negativ ist?
@@ -1108,6 +1130,152 @@ Dafür gibt es einen Trick: Die Standardnormalverteilung ist achsensymmetrisch (
 Es gilt: `\(Φ(−x) = 1−Φ(x)\)`
 
 Wenn Sie einen negativen z Wert haben, suchen Sie also zunächst den dazugehörigen positiven z-Wert. Dann rechnen Sie 1 minus den positiven z-Wert.
+
+---
+class: top, left
+### Stichprobe, Grundgesamtheit und Stichprobenfehler
+
+**Standardnormalverteilung (N~0,1):**
+
+* Um die Standardnormalverteilung Tabelle nutzen zu können, brauchen Sie entweder einen gegebenen z-Wert oder eine gegebene Wahrscheinlichkeit.
+
+* Die Berechnung eines z-Werts kann für jeden Wert einer normalverteilten Variable erfolgen
+
+* Dieser Prozess nennt sich **z-Transformation** oder kurz **Standardisierung**
+
+* Dafür braucht man nichts weiter als den Mittelwert und die Standardabweichung der Verteilung
+
+`$$z_{i} = \frac{x_{i} - \bar{x}}{s}$$`
+
+---
+class: top, left
+### Stichprobe, Grundgesamtheit und Stichprobenfehler
+
+**Standardnormalverteilung (N~0,1):**
+
+Vorteil der Standardisierung:
+
+* Messwerte von Personen verschiedener Populationen sind oft nicht direkt **vergleichbar**, z.B. die Leistung eines Mädchens in Kugelstoßen mit jener eines Jungen
+
+* Dennoch möchte man ausdrücken können, wie gut die beiden Leistungen innerhalb der Bezugsgruppe sind
+
+* Der Standardmesswert `\(z_{i}\)`: bezieht den beobachteten Messwert `\(x_{i}\)` der i-ten Person auf den Mittelwert `\(\bar{x}\)` der Gruppe und drückt die Abweichung in Standardeinheiten `\(s\)` aus
+
+---
+class: top, left
+### Stichprobe, Grundgesamtheit und Stichprobenfehler
+
+**Standardnormalverteilung (N~0,1):**
+
+Beispiel: Standardisierung Kugelstoßen `\((N=5)\)`; Vergleich Frauen (w) und Männer (m)
+
+.center[
+&lt;table&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ID &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Meter_m &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Meter_w &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+.left[Lösungsweg (für 3. Mann):] 
+
+`$$\bar{x}=\frac{8 + 9 + 12 + 9 + 9}{5}=\frac{47}{5}=9.4$$`
+`$$s=\sqrt{\frac{(8-9.4)^2 + (9-9.4)^2 + (12-9.4)^2 + (9-9.4)^2 + (9-9.4)^2}{5-1}}=\sqrt{\frac{9.2}{4}}=1.52$$`
+
+`$$z_{3}=\frac{12 - 9.4}{1.52}= 1.71$$`
+---
+class: top, left
+### Stichprobe, Grundgesamtheit und Stichprobenfehler
+
+**Standardnormalverteilung (N~0,1):**
+
+Beispiel: Standardisierung Kugelstoßen `\((N=5)\)`; Vergleich Frauen (w) und Männer (m)
+
+.center[
+&lt;table&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ID &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Meter_m &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Meter_w &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+Nach der Standardisierung jeden Werts anhand Mittelwert und Standardabweichung der Referenzgruppe:
+
+&lt;table&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ID &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; z_m &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; -0.92 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; -0.26 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.71 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; -0.26 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; -0.26 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; z_w &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.40 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0.53 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; -1.23 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; -0.35 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; -0.35 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+**Interpretation:** Während z.B. die 2. Frau absolut weniger weit gestoßen hat (7m) als der 2. Mann (9m), liegt sie relativ zum Mittel der Gruppen vor ihm (0.53 &gt; -0.26).
 
 ---
 class: top, left
