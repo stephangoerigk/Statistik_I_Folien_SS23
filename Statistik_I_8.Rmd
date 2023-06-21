@@ -962,17 +962,17 @@ class: top, left
 ### Take-aways
 
 .full-width[.content-box-gray[
-* t-Test ist eine Auswertungsverfahren für den *Vergleich von 2 Mittelwerten*
+* t-Test ist eine Auswertungsverfahren für den **Vergleich von 2 Mittelwerten**
 
-* Vergleich von Mittelwerten 2er Gruppen erfolgt mittels *unabhängigem t-Test*, von Mittelwerten 2er Zeitpunkte mit *abhängigem t-Test* und Vergleich von Mittelwert mit vorgegebenem Referenzwert mit *Ein-Stichproben t-Test*
+* Vergleich von Mittelwerten 2er Gruppen erfolgt mittels **unabhängigem t-Test**, von Mittelwerten 2er Zeitpunkte mit **abhängigem t-Test** und Vergleich von Mittelwert mit vorgegebenem Referenzwert mit **Ein-Stichproben t-Test**
 
-* *Voraussetzungen* für unabhängige t-Test umfassen unabhängige Daten, Intervallskalenniveau, Normalverteilung und Varianzhomogenität
+* **Voraussetzungen** für unabhängige t-Test umfassen unabhängige Daten, Intervallskalenniveau, Normalverteilung und Varianzhomogenität
 
-* Vorgehen: Berechnung von $t_{emp}$ und Vergleich mit $t_{krit}$, welcher aus *t-Tabelle* abgelesen wird
+* Vorgehen: Berechnung von $t_{emp}$ und Vergleich mit $t_{krit}$, welcher aus **t-Tabelle** abgelesen wird
 
-* Vorsicht: t-Test kann zu $Fehlentscheidungen$ führen (s.h. $\alpha$-Fehler und $\beta$-Fehler)
+* Vorsicht: t-Test kann zu **Fehlentscheidungen** führen (s.h. $\alpha$-Fehler und $\beta$-Fehler)
 
-* Prüfung, ob Effekt (Mittelwertunterschiede/Mittelwertsdifferenzen), die in Stichprobe gemessen wurden auf Population *generalisierbar* sind.
+* Prüfung, ob Effekt (Mittelwertunterschiede/Mittelwertsdifferenzen), die in Stichprobe gemessen wurden auf Population **generalisierbar** sind.
 ]
 ]
 
