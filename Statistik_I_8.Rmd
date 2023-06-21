@@ -59,7 +59,7 @@ class: middle, left
 # Statistik I
 
 ### Einheit 8: $t$-Test
-##### 03.01.2023 | Dr. phil. Stephan Goerigk
+##### 21.06.2023 | Prof. Dr. phil. Stephan Goerigk
 
 ---
 class: top, left
@@ -305,7 +305,7 @@ class: top, left
 
 * es handelt sich um Paare (Geschwisterpaare, Ehepaare,..) 
 
-* Personen aufgrund eines oder mehrerer Variablen parallelisiert wurden (z.B. aufgrund eines Vortests werden je zwei Personen mit gleicher Punktezahl zu Paaren zusammengefasst).
+* Personen wurden aufgrund eines oder mehrerer Variablen parallelisiert wurden (z.B. aufgrund eines Vortests werden je zwei Personen mit gleicher Punktezahl zu Paaren zusammengefasst).
 
 ]
 
@@ -533,7 +533,6 @@ Hypothesen des F-Tests:
 * $H_0$: $σ_{VG}^2 = σ_{KG}^2$ 
 * $H_1$: $σ_{VG}^2 \neq σ_{KG}^2$
  
-
 ---
 class: top, left
 ### $t$-Test
@@ -640,7 +639,7 @@ Beispiel 1:
 Gegeben:
 
 * VG: $\bar{x}_{VG} =7.22,s^2_{VG} =6.12;n_{VG}=53$ 
-* KG: $\bar{x}_{VG} =4.91,s^2_{VG} =6.54;n_{VG}=51$ 
+* KG: $\bar{x}_{KG} =4.91,s^2_{KG} =6.54;n_{KG}=51$ 
 * NV gegeben, $α=.05$
 
 </small>
@@ -698,7 +697,7 @@ class: top, left
 
 Beispiel 1:
 
-Homogenität der Varianzen: $H_0$: $σ_1^2 = σ^2$, $H_1$:$ σ_1^2 \neq  σ^2$
+Homogenität der Varianzen: $H_0$: $σ_1^2 = σ^2,$ $H_1:$ $σ_1^2 \neq  σ^2$
 
 $$F=\frac{6.54}{6.12}=1.07; df_1=50, df_2=52$$
 
@@ -869,28 +868,112 @@ $$t_{abhängig}=\frac{\bar{x}_d}{\hat{\sigma}_{\bar{x}_d}}= \frac{\bar{x}_d}{\fr
 class: top, left
 ### $t$-Test
 
-$$P(A|B)=\frac{P(B|A) \cdot P(A)}{P(B)}$$
-$$P(A|B)=\frac{P(B|A) \cdot P(A)}{P(B)}$$
+#### Berechnung in R 
 
+**Unabhängiger t-Test:**
+
+Beispiel: Vergleich der Reduktion von Symptomatik zwischen 2 Gruppen $(N=16)$
+
+```{r echo = F, out.width="430px"}
+df = data.frame(Reduktion = c(round(rnorm(8, 10, 2)), round(rnorm(8, 7, 2))),
+                                    Gruppe = c(rep("G1", 8), rep("G2", 8)))                                         
+```
+
+.pull-left[
+```{r echo=FALSE}
+df_med = plyr::ddply(df, c("Gruppe"), plyr::summarise,
+                                               Mittelwert = round(mean(Reduktion, na.rm = T), 2),
+                                               SD = round(sd(Reduktion, na.rm = T), 2))
+knitr::kable(df_med,
+             booktabs = T,
+             longtable = F) %>%
+  kable_classic(full_width = F,
+                  font_size = 18,
+                  html_font = "Times New Roman")
+```
+
+.center[
+```{r, echo = F, out.width="250px"}
+ggplot(df, aes(x = Gruppe, y = Reduktion)) +
+   stat_summary(size = 1.5, geom = "bar") +
+    labs(x = "Gruppe", y = "Reduktion") +
+  theme_classic() +
+  theme(text = element_text(size = 28))
+```
+]
+]
+.pull-right[
+.code80[
+```{r}
+t.test(Reduktion ~ Gruppe, data = df, var.equal = T)
+```
+]
+]
+
+---
+class: top, left
+### $t$-Test
+
+#### Berechnung in R 
+
+**Abhängiger t-Test:**
+
+Beispiel: Prüfung, ob Symptomreduktion zwischen 2 Zeitpunkten signifikant ist $(N=8)$
+
+```{r echo = F, out.width="430px"}
+df = data.frame(Reduktion = c(round(rnorm(8, 10, 2)), round(rnorm(8, 7, 2))),
+                                    Messung = c(rep("T1", 8), rep("T2", 8)))                                         
+```
+
+.pull-left[
+```{r echo=FALSE}
+df_med = plyr::ddply(df, c("Messung"), plyr::summarise,
+                                               Mittelwert = round(mean(Reduktion, na.rm = T), 2),
+                                               SD = round(sd(Reduktion, na.rm = T), 2))
+knitr::kable(df_med,
+             booktabs = T,
+             longtable = F) %>%
+  kable_classic(full_width = F,
+                  font_size = 18,
+                  html_font = "Times New Roman")
+```
+
+.center[
+```{r, echo = F, out.width="250px"}
+ggplot(df, aes(x = Messung, y = Reduktion)) +
+   stat_summary(size = 1.5) +
+  stat_summary(geom = "line", group = 1) +
+    labs(x = "Messung", y = "Reduktion") +
+  theme_classic() +
+  theme(text = element_text(size = 28))
+```
+]
+]
+.pull-right[
+.code80[
+```{r}
+t.test(Reduktion ~ Messung, data = df, paired = T)
+```
+]
+]
 
 ---
 class: top, left
 ### Take-aways
 
 .full-width[.content-box-gray[
-* t-Test ist eine Auswertungsverfahren für den Vergleich von Mittelwerten
+* t-Test ist eine Auswertungsverfahren für den *Vergleich von 2 Mittelwerten*
 
-* Vergleich von Mittelwerten 2er Gruppen erfolgt mittels unabhängigem t-Test, von Mittelwerten 2er Zeitpunkte mit abhängigem t-Test und Vergleich von Mittelwert mit vorgegebenem Referenzwert mit Ein-Stichproben t-Test
+* Vergleich von Mittelwerten 2er Gruppen erfolgt mittels *unabhängigem t-Test*, von Mittelwerten 2er Zeitpunkte mit *abhängigem t-Test* und Vergleich von Mittelwert mit vorgegebenem Referenzwert mit *Ein-Stichproben t-Test*
 
-* Voraussetzungen für unabhängige t-Test umfassen unabhängige Daten, Intervallskalenniveau, Normalverteilung und Varianzhomogenität
+* *Voraussetzungen* für unabhängige t-Test umfassen unabhängige Daten, Intervallskalenniveau, Normalverteilung und Varianzhomogenität
 
-* Vorgehen: Berechnung von $t_{emp}$ und Vergleich mit $t_{krit}$, welcher aus t-Tabelle abgelesen wird
+* Vorgehen: Berechnung von $t_{emp}$ und Vergleich mit $t_{krit}$, welcher aus *t-Tabelle* abgelesen wird
 
-* Vorsicht: t-Test kann zu Fehlentscheidungen führen (s.h. $\alpha$-Fehler und $\beta$-Fehler)
+* Vorsicht: t-Test kann zu $Fehlentscheidungen$ führen (s.h. $\alpha$-Fehler und $\beta$-Fehler)
 
-* Prüfung, ob Effekt (Mittelwertunterschiede/Mittelwertsdifferenzen), die in Stichprobe gemessen wurden auf Population generalisierbar sind.
+* Prüfung, ob Effekt (Mittelwertunterschiede/Mittelwertsdifferenzen), die in Stichprobe gemessen wurden auf Population *generalisierbar* sind.
 ]
 ]
 
-[**Link zur Wissensüberprüfung**](https://docs.google.com/forms/d/e/1FAIpQLSfyoeahyWszszxLO6xipdtIsI7VREOVBFK6flgeAUw2FAn8Yg/viewform?usp=sf_link)
 
