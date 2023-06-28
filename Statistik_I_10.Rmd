@@ -59,7 +59,7 @@ class: middle, left
 # Statistik I
 
 ### Einheit 10: Korrelation
-##### 23.01.2023 | Dr. phil. Stephan Goerigk
+##### 28.06.2023 | Prof. Dr. phil. Stephan Goerigk
 
 ---
 class: top, left
@@ -171,7 +171,7 @@ class: top, left
 
 * Ist die Punktewolke kreisförmig, besteht kein Zusammenhang
 
-* Grafische Interpretation erlaubt grobe Orientierung über die Grad des Zusammenhangs. Diesen zu quantifizieren ist Aufgabe der Kovarianz und Korrelation.
+* Grafische Interpretation erlaubt grobe Orientierung über den Grad des Zusammenhangs. Diesen zu quantifizieren ist Aufgabe der Kovarianz und Korrelation.
 
 ]
 .pull-right[
@@ -218,11 +218,11 @@ class: top, left
 
 * Betrag der Kovarianz zwischen 2 Variablen kann beliebige Werte zwischen 0 und einer maximalen Kovarianz $|cov_{max}|$ annehmen.
 
-* $|cov_{max}|$ ist für positiver und negative ZUsammenhänge identisch
+* $|cov_{max}|$ ist für positiver und negative Zusammenhänge identisch
 
 Definition von $|cov_{max}|$:
 
-* Definiert als das Prdukt der beiden Merkmalsstreuungen:
+* Definiert als das Produkt der beiden Merkmalsstreuungen:
 
 $$|cov_{max}|=\hat{\sigma}_x \cdot \hat{\sigma}_y$$
 
@@ -234,7 +234,7 @@ class: top, left
 
 ##### Wertespektrum:
 
-$(cov_{(x,y)}) < 0$:
+$(cov_{(x,y)}) > 0$:
 
 * Kovarianz ist positiv, wenn positive Abweichungen vom Mittelwert in $X$ mit positiven in $Y$ und negativen Abweichungen in $X$ mit negativen in $Y$ einhergehen.
 
@@ -291,9 +291,9 @@ kable(df[,], col.names = NULL)%>%
   kable_styling(font_size = 18)
 ```
 
-Die Kovarianz von Schlaf und Konzentration in dieser Stichprobe berechnet sich wie folgt $(\bar{x}=`r round(mean(df2[,2]),2)`, \bar{y}=`r round(mean(df2[,3]),2)`)$:
+Die Kovarianz von Schlaf und Konzentration in dieser Stichprobe berechnet sich wie folgt $(\bar{x}=8.63, \bar{y}=`r round(mean(df2[,3]),2)`)$:
 
-$$cov_{x,y}=\frac{(6-8.5)\cdot(2-5.56)+(7-8.5)\cdot(2-5.56)+...}{`r N-1`}=`r round(cov(df2[,2], df2[,3]), 2)`$$
+$$cov_{x,y}=\frac{(6-8.63)\cdot(2-5.56)+(7-8.63)\cdot(2-5.56)+...}{`r N-1`}=`r round(cov(df2[,2], df2[,3]), 2)`$$
 * Der Zusammenhang zwischen Schlaf und Konzentrationsfähigkeit ist also positiv.
 
 * Über die relative Höhe des Zusammenhangs sagt dieser Wert nichts aus. Dafür brauchen wir ein standardisiertes Maß.
@@ -378,7 +378,7 @@ Um den Korrelationskoeffizienten $(r)$ für unser Beispiel zu bestimmen, müssen
 * $\hat{\sigma}_x = `r round(sd(df2[,2]), 2)`$
 * $\hat{\sigma}_y = `r round(sd(df2[,3]), 2)`$
 
-$$cov_{x,y}=\frac{(6-8.5)\cdot(2-5.56)+(7-8.5)\cdot(2-5.56)+...}{`r N-1`}=`r round(cov(df2[,2], df2[,3]), 2)`$$
+$$cov_{x,y}=\frac{(6-8.63)\cdot(2-5.56)+(7-8.63)\cdot(2-5.56)+...}{`r N-1`}=`r round(cov(df2[,2], df2[,3]), 2)`$$
 
 $$r_{xy}=\frac{cov_{x,y}}{\hat{\sigma}_x \cdot \hat{\sigma}_y}=\frac{`r round(cov(df2[,2], df2[,3]), 2)`}{`r round(sd(df2[,2]), 2)` \cdot `r round(sd(df2[,3]), 2)`}= `r round(round(cov(df2[,2], df2[,3]), 2) / (round(sd(df2[,2]), 2) * round(sd(df2[,3]), 2)),2)`$$
 
@@ -427,7 +427,7 @@ class: top, left
 
 * Relationen ist kein perfektes Maß, wenn Zusammenhänge aus mehreren Studien miteinander verglichen und zusammen gefasst werden sollen (ein $r$ vs. ein zweites $r)$
 
-* Um direkte Vergleiche zwischen Korrelationskoeffizienten zu ermöglichen benötigt man einen Zwischenschritt (Fishers Z-Transformation)
+* Um direkte Vergleiche zwischen Korrelationskoeffizienten zu ermöglichen, benötigt man einen Zwischenschritt (Fishers Z-Transformation)
 
 ---
 class: top, left
@@ -486,7 +486,7 @@ class: top, left
 
 ##### Pearson-Korrelation als Signifikanztest - Beispiel
 
-Der Psychologe aus unserem Beispiel möchte wissen, ob ein signifikanter positiver Zusammenhang zwischen Schlaf und Aufmerksamkeits Leistung besteht.
+Der Psychologe aus unserem Beispiel möchte wissen, ob ein signifikanter positiver Zusammenhang zwischen Schlaf und Aufmerksamkeitsleistung besteht.
 
 Hypothesen:
 
@@ -571,7 +571,7 @@ class: top, left
 
 * Stärke des Zusammenhangs wird mit dem Korrelationskoeffizient $r_s$ angegeben.
 
-* Anderer Name für die selbe Korrelation: Spearman-Korrelation
+* Anderer Name für dieselbe Korrelation: Spearman-Korrelation
 
 ---
 class: top, left
@@ -741,7 +741,7 @@ class: top, left
 
 **Ausreißer:**
 
-* Die Rangkorrelation wird der Produkt-Moment-Korrelation auch vorgezogen wenn Ausreißer in den Daten sind.
+* Die Rangkorrelation wird der Produkt-Moment-Korrelation auch vorgezogen, wenn Ausreißer in den Daten sind.
 
 * Grund: Formel der Produkt-Moment-Korrelation nutzt Standardabweichungen (stark von Außreißern beeinflusst).
 
@@ -782,7 +782,7 @@ class: top, left
 .full-width[.content-box-gray[
 * Ein (bivariater) Zusammenhang zeigt sich darin, dass zwei Variablen **systematisch miteinander variieren**.
 
-* Die **Kovarianz**, ein unstandardisiertes Zusammenhangsmaß, kann puns die richtung des Zusammenhangs anzeigen, aber nicht direkt hinsichtlich seiner Stärke interpretiert werden.
+* Die **Kovarianz**, ein unstandardisiertes Zusammenhangsmaß, kann uns die Richtung des Zusammenhangs anzeigen, aber nicht direkt hinsichtlich seiner Stärke interpretiert werden.
 
 * Der **Korrelationskoeffizient** $(r)$ ist ein standardisiertes Maß für den Zusammenhang zweier Variablen und kann Werte im Bereich von -1 bis +1 annehmen.
 
