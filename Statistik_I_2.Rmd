@@ -367,17 +367,17 @@ class: top, left
 
 * Je höher das Skalenniveau, desto mehr Vergleichsaussagen und Rechenoperationen sind möglich
 
-Es gibt 4 hierarchisch geordnete Skalenniveaus:
+Es gibt 3 hierarchisch geordnete Skalenniveaus:
 
-1. **Nominal** (kategorisch)
+1. **Nominal** (kategorial)
 
-2. **Ordinal** (kategorisch)
+2. **Ordinal** (kategorial)
 
 3. **Metrisch**
 
-3.1. **Intervallskala**
+  3.1. **Intervallskala**
 
-3.2. **Verhältnisskala**
+  3.2. **Verhältnisskala**
 
 ---
 class: top, left
@@ -487,22 +487,30 @@ class: top, left
 
 ##### Intervallskala vs. Verhältnisskala
 
+<small>
+
 .pull-left[
 **Intervallskala**
 
 * **Wichtigste** Skala in den Sozialwissenschaften
+
 * Macht Aussagen über Größe der Unterschiede zwischen Merkmalsausprägungen
-* Erlaubt **lineare Transformationen** $y= a \cdot x + b$
+
+* Erlaubt **lineare Transformationen** $y_i= a + b \cdot x_i$
 ]
 
 .pull-right[
 **Verhältnisskala**
 
 * eine Annahme mehr: Skala hat **absoluten Nullpunkt**
+
 * Nullpunkt lokalisiert, wo die Variable aufhört zu **existieren**
+
 * **Selten** in Sozialwissenschaften (Variablen wie Intelligenz, Neurotizimus... haben keine sinnvolle 0)
+
 * macht somit Aussagen über das Verhältnis von Merkmalsausprägungen
-* Erlaubt **Ähnlichkeitstransformationen** $y= a \cdot x$
+
+* Erlaubt **Ähnlichkeitstransformationen** $y_i= b \cdot x_i$
 ]
 
 ---
@@ -537,7 +545,7 @@ class: top, left
 df = data.frame(Skalenniveau = c("Nominalskala", "Ordinalskala", "Intervallskala", "Verhältnisskala"),
                 Aussagen = c("Gleichheit/Verschiedenheit", "Größer-Kleiner Relation", "Gleichheit von Differenzen", "Gleichheit von Verhältnissen"),
                 Beispiele = c("Diagnosen, Nationalität, Gruppenzugehörigkeit", "Schulabschlüsse, Bundesligatabelle, Medaillenfarbe", "IQ, Persönlichkeit", "Gewicht, Länge"),
-                Transformationen = c("wenn x1 ungleich x2 dann y1 ungleich y2", "wenn x1 > x2 > x3 dann y1 > y2 > y3 oder y1 < y2 < y3", "$y= a \\cdot x + b$", "$y= a \\cdot x$"))
+                Transformationen = c("wenn x1 ungleich x2 dann y1 ungleich y2", "wenn x1 > x2 > x3 dann y1 > y2 > y3 oder y1 < y2 < y3", "$y_i= a + b \\cdot x_i$", "$y_i= b \\cdot x_i$"))
 
 df %>%
   kbl(escape = F) %>%
@@ -675,13 +683,13 @@ class: top, left
 
 Zwei häufige Arten statistischer Kenntwerte:
 
-1. **Maße der zentralen Tendenz** (Lagemaße)
+1. **Maße der zentralen Tendenz** (aka. Lagemaße)
 
-* repräsentieren alle Einzelwerte der Verteilung zusammenfassend
+  * repräsentieren alle Einzelwerte der Verteilung zusammenfassend
 
-2. **Streuungsmaße** (Dispersionsmaße)
+2. **Streuungsmaße** (aka. Dispersionsmaße)
 
-* geben Auskunft über Variation der Messwerte
+  * geben Auskunft über Variation der Messwerte
 
 ---
 class: top, left
@@ -709,7 +717,7 @@ ggplot(data = data.frame(x = c(-5 * sd(x) + mean(x), 9 * sd(x) + mean(x))), aes(
   scale_x_continuous(breaks = NULL) +
   scale_y_continuous(breaks = NULL) +
   theme_classic() +
-  theme(text = element_text(size = 25))
+  theme(text = element_text(size = 30))
 ```
 ]
 ]
@@ -731,7 +739,7 @@ ggplot(data = data.frame(x = c(-9 * sd(x) + mean(x), 9 * sd(x) + mean(x))), aes(
   scale_x_continuous(breaks = NULL) +
   scale_y_continuous(breaks = NULL) +
   theme_classic() +
-  theme(text = element_text(size = 25))
+  theme(text = element_text(size = 30))
 ```
 ]
 ]
@@ -743,7 +751,7 @@ class: top, left
 #### Statistische Kennwerte
 
 .pull-left[
-**Maße der zentralen Tendenz:**
+**Gängige Maße der zentralen Tendenz:**
 
 * Modalwert
 
@@ -753,7 +761,7 @@ class: top, left
 ]
 
 .pull-right[
-**Streuungsmaße:**
+**Gängige Streuungsmaße:**
 
 * Spannweite
 
@@ -761,6 +769,50 @@ class: top, left
 
 * Quartilabstand
 ]
+
+---
+class: top, left
+### Skalenniveaus und statistische Kennwerte
+
+#### Statistische Kennwerte
+
+**Glossar Symbole:**
+
+* Auf Stichprobenebene werden **lateinische Buchstaben** verwendet
+
+* Auf Populationsebene werden **griechische Buchstaben** verwendet
+
+```{r echo=FALSE}
+d = data.frame(
+  Statistik = c("Mittelwert",
+                "Median",
+                "Varianz",
+                "Standardabweichung",
+                "Korrelationskoeffizient",
+                "Regressionskoeffizient"),
+  Stichprobenebene = c("$\\bar{x}$",
+                       "$Md$",
+                       "$s^2$",
+                       "$s$",
+                       "$r$",
+                       "$b$"),
+  Populationsebene = c("$\\mu$",
+                       "$\\eta$",
+                       "$\\sigma^2$",
+                       "$\\sigma$",
+                       "$\\rho$",
+                       "$\\beta$"),
+  Populationsschätzer = c("$\\hat{\\mu}$",
+                       "$\\hat{\\eta}$",
+                       "$\\hat{\\sigma^2}$",
+                       "$\\hat{\\sigma}$",
+                       "$\\hat{\\rho}$",
+                       "$\\hat{\\beta}$")
+)
+
+kable(d)%>%
+  kable_styling(font_size = 18)
+```
 
 
 ---
@@ -779,7 +831,7 @@ class: top, left
 
 * Berechnung erfordert lediglich **Nominalskalenniveau**
 
-* Wert mit höchster absoluter Häufigkeit (f<sub>j</sub>)
+* Wert mit höchster absoluter Häufigkeit $(f_j)$
 
 * Graphen mit nur einem Modus heißen **unimodal** (aka eingipfelig)
 
@@ -836,6 +888,8 @@ class: top, left
 #### Statistische Kennwerte
 
 ##### Maße der zentralen Tendenz:
+
+<small>
 
 **Mittelwert** (aka arithmetisches Mittel)
 
@@ -1075,6 +1129,8 @@ class: top, left
 
 **Median** 
 
+<small>
+
 * Wert, der in der Mitte der Verteilung liegt (halbiert die Verteilung)
 
 * es liegen genau so viele Messwerte über wie unter dem Median
@@ -1089,7 +1145,7 @@ class: top, left
   * einfach: ordnen der Werte der Größe nach $\rightarrow$ numerische Mitte aus beiden mittleren Werten = Median
   * z.B. [1, 3, 4, 5, 6, 9] $\rightarrow$ Median = (4+5) / 2 = 4.5
   
-* Bildet nur Größer-Kleiner Relationen ab $\rightarrow$ erfordert nur Ordinalskalenniveau
+* Bildet nur größer-kleiner Relationen ab $\rightarrow$ erfordert lediglich Ordinalskalenniveau
 
 ---
 class: top, left
@@ -1097,7 +1153,7 @@ class: top, left
 
 #### Statistische Kennwerte - Maße der zentralen Tendenz:
 
-**Median Rechenbeispiel:** Median aus Variable $X$ $(N=10)$
+**Median - Rechenbeispiel:** Median aus Variable $X$ $(N=10)$
 
 .center[
 ```{r echo = F}
@@ -1114,6 +1170,8 @@ kable(df[,], col.names = NULL)
 ```
 ]
 
+<small>
+
 Formel: $$\def\arraystretch{1.2} \textit{Md} = \Bigg\{\begin{array}{@{}c@{}}\frac{x_{(\frac{n}{2})}+x_{(\frac{n}{2}+1)}}{2} \quad \textrm{falls }n \textrm{ gerade}\\[6pt] x_{(\frac{n+1}{2})}\quad \textrm{falls }n \textrm{ ungerade}\end{array}$$
 
 Lösungweg: 
@@ -1128,7 +1186,7 @@ class: top, left
 
 #### Statistische Kennwerte - Maße der zentralen Tendenz:
 
-**Aufgabe Median:** Berechnen Sie den Median für die Variable Monatseinkommen $(N=8)$
+**Median - Aufgabe:** Berechnen Sie den Median für die Variable Monatseinkommen $(N=8)$
 
 .center[
 ```{r echo = F}
@@ -1216,7 +1274,7 @@ class: top, left
 
 **Vorteile Median gegenüber Mittelwert:** 
 
-**Beispiel für Robustheit gegenüber Extremwerten** 10. Wert der Variable $X$ ist ein Ausreißer
+**Beispiel für Robustheit gegenüber Extremwerten:** 10. Wert der Variable $X$ ist ein Ausreißer
 
 .center[
 ```{r echo = F}
@@ -1246,7 +1304,7 @@ class: top, left
 
 * **Histogramm** und **Balkendiagramm** eigenen sich zur Darstellung der Verteilung einer Variable.
 
-* Wir unterscheiden 4 Arten von **Skalenniveaus**: Nominal-, Ordinal-, Intervall- und Verhältnisskalenniveau.
+* Wir unterscheiden 3 Arten von **Skalenniveaus**: Nominal-, Ordinal-, Intervall- und Verhältnisskalenniveau.
 
 * Die Skalenniveaus **entscheiden**, welche Statistiken wir rechnen dürfen.
 

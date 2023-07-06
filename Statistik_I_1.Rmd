@@ -75,11 +75,15 @@ Infanteriestraße 11a · 80797 München ·
 
 [stephan.goerigk@charlotte-fresenius-uni.de](mailto:stephan.goerigk@charlotte-fresenius-uni.de)
 
+***
+
 Zoom Sprechstunde (bitte per Email anmelden): 
 
 Meeting-ID: 284 567 8838
 
 Kenncode: 807174
+
+***
 
 [Publikationen](https://scholar.google.at/citations?user=nlvO-e4AAAAJ&hl=de)
 
@@ -121,7 +125,9 @@ df = readxl::read_xlsx("Modul Quantitative Methoden I_Termine.xlsx", sheet = "Ta
 df$Datum = format(as.Date(df$Datum), "%d.%m.%Y")
 df %>%
   kbl() %>%
-  kable_classic(full_width = T, position = "left")
+  kable_classic(full_width = T, 
+                font_size = 16,
+                position = "left")
 ```
 
 ---
@@ -138,7 +144,10 @@ Es werden händische Berechnungen durchgeführt.
 
 * kariertes Papier
 
+***
+
 Interaktion während der Lehrveranstaltung:
+
 * [Note-Pad](https://docs.google.com/document/d/1dnTL3c64X8Z9hgiLzWk-SrjS0QJodd1TMauePhHf7dk/edit) 
 
 * Folien ersetzen nicht den Vorlesungsbesuch
@@ -1294,6 +1303,8 @@ $$\sum\limits _{i=1}^{n}x_{i}$$
 class: top, left
 ### Summenzeichen
 
+<small>
+
 **Beispiel 1**:
 
 Summe der Variable "Anzahl Kinder" aller Personen aus unserer Datenmatrix:
@@ -1322,6 +1333,7 @@ Es gelten die allgemeinen Rechenregeln für Additionen
 
 $\sum\limits _{i=1}^{n}a-x_{i} = (a-x1+a-x2+...+a-xn)$
 
+***
 
 **Beispiel 2**:
 
@@ -1334,6 +1346,8 @@ class: top, left
 #### Aufgabe 2:
 
 Berechnen Sie mit korrekter Notation (Summenzeichen) die Gesamtzahl der genannten Psychologen (Mehrfachnennungen erlaubt) in Ihrer selbst erstellten Datenmatrix.
+
+***
 
 #### Aufgabe 3:
 
