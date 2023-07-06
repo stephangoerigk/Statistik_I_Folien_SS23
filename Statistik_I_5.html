@@ -36,7 +36,7 @@ class: top, left
 
 **Inferenzstatistik: **
 
-Umfasst alle statistischen Verfahren, die es erlauben, trotz der Informationsunvollständigkeit der Stichprobendaten Aussagen über eine Population zu treffen.
+* Umfasst alle statistischen Verfahren, die es erlauben, trotz der Informationsunvollständigkeit der Stichprobendaten Aussagen über eine Population zu treffen.
 
 **Population: **
 
@@ -57,6 +57,8 @@ class: top, left
 * Wenn nur ein Teil der Grundgesamtheit erfasst wird, z.B. 100 Personen, ist die **Informationslage** in Bezug auf die Untersuchungsfrage **unvollständig**. Wir können nicht einfach deskriptiv-statistische Methoden verwenden.
 
 * Wie kann man trotzdem Aussagen treffen, die sich auf alle Personen der Grundgesamtheit beziehen, obwohl nur die Daten einer Stichprobe vorliegen?
+
+***
 
 **Idee:**
 
@@ -89,6 +91,8 @@ class: top, left
 * Grundlage: Wahrscheinlichkeitsrechnung
 
 * Zentral: Zufallsprozesse (Ausgang unsicher, nicht mit Sicherheit vorhersagbar)
+
+***
 
 **Wahrscheinlichkeitsrechnung:**
 
@@ -175,6 +179,8 @@ Die mathematische Formulierung:
 &lt;img src="bilder/stat_Wahrscheinlichkeit.png" width="250px" /&gt;
 ]
 
+***
+
 In anderen Worten:
 
 * Die Wahrscheinlichkeit eines Ereignisses gibt an, mit welcher relativen Häufigkeit das Ereignis einträte, wenn man den Versuch theoretisch unendlich oft wiederholen würde.
@@ -190,7 +196,7 @@ class: top, left
 **Laplace-Wahrscheinlichkeit**
 
 
-Bei Zufallsexperimenten, bei denen nur endlich viele, gleichwahrscheinliche Ergebnisse möglich sind, ergibt sich für ein beliebiges Ereignis A die Wahrscheinlichkeit
+Bei Zufallsexperimenten, bei denen nur endlich viele, gleichwahrscheinliche Ergebnisse möglich sind, ergibt sich für ein beliebiges Ereignis A die Wahrscheinlichkeit `\(P(A):\)`
 
 .center[
 &lt;img src="bilder/Laplace.png" width="750px" /&gt;
@@ -207,11 +213,13 @@ class: top, left
 Wahrscheinlichkeiten lassen sich durch drei Eigenschaften, die auch f̈ür relative Häufigkeiten gelten, und aus denen sich alle Rechenregeln für Wahrscheinlichkeiten ableiten lassen, charakterisieren:
 
 
-1. Für die Wahrscheinlichkeit eines Ereignisses gilt stets: `\(0 ≤ P(A) ≤ 1\)`.
+1. Für die Wahrscheinlichkeit eines Ereignisses **gilt stets**: 
+`$$0 ≤ P(A) ≤ 1$$`
 
-2. Die Wahrscheinlichkeit eines sicheren Ereignisses beträgt `\(P(Ω) = 1\)`.
+2. Die Wahrscheinlichkeit eines **sicheren Ereignisses** beträgt 
+`$$P(Ω) = 1$$`
 
-3. Additionsregel der Wahrscheinlichkeit: Die Wahrscheinlichkeit, dass eines von `\(k\)` einander ausschließenden Ereignissen auftritt, ist die Summe der einzelnen Wahrscheinlichkeiten `\(P(A_{1}), P(A_{2}), . . . , P(A_{k})\)`.
+3. **Additionsregel der Wahrscheinlichkeit:** Die Wahrscheinlichkeit, dass eines von `\(k\)` einander ausschließenden Ereignissen auftritt, ist die Summe der einzelnen Wahrscheinlichkeiten `\(P(A_{1}), P(A_{2}), . . . , P(A_{k})\)`.
 
 `$$P(A_{1} ∨ A_{2} ∨...∨ A_{k})=P(A_{1})+P(A_{2})+...+P(A_{k})$$`
 ---
@@ -222,13 +230,15 @@ class: top, left
 
 **Rechenregeln: Unmögliches Ereignis**
 
-* Die Wahrscheinlichkeit des unmöglichen Ereignisses B beträgt `\(P(B) = 0\)`.
+* Die Wahrscheinlichkeit des unmöglichen Ereignisses B beträgt 
+`$$P(B) = 0$$`
  
-* Wenn B ein unmögliches Ereignis ist, kann es nie eintreten: `\(rn(B) = 0 → P(B) = 0\)`.
+* Wenn B ein unmögliches Ereignis ist, kann es nie eintreten: 
+`$$rn(B) = 0 → P(B) = 0$$`
 
-Achtung: 
+ACHTUNG: 
 
-* Aus `\(P(B) = 0\)` folgt aber nicht, dass B ein unmögliches Ereignis ist. 
+* Aus `\(P(B) = 0\)` folgt nicht, dass B ein unmögliches Ereignis ist. 
 
 * Das bedeutet nur, dass der Grenzwert der relativen Häufigkeit bei `\(n → ∞\)` Null ist, woraus aber nicht folgt, dass B nie eintreten kann! (Analoges gilt für `\(P(A) = 1\)`).
 
@@ -244,7 +254,11 @@ class: top, left
 
 * `\(\bar{A}\)` tritt immer dann ein, wenn `\(A\)` nicht eintritt → `\(r_{n}(A) + r_{n}(\bar{A}) = 1\)`
 
-Beispiel: Münzwurf: `\(P(K) + P(Z) = 0.5 + 0.5 = 1\)`
+***
+
+Beispiel - Münzwurf: 
+
+`\(P(K) + P(Z) = 0.5 + 0.5 = 1\)`
 
 ---
 class: top, left
@@ -304,10 +318,14 @@ class: top, left
 
 * Aus den bedingten Wahrscheinlichkeiten kann man die Wahrscheinlichkeit des Durchschnittsereignisses ausrechnen.
 
+***
+
 Beispiel:
 
 * Mit einer Wahrscheinlichkeit von 1% rollt einem Autofahrer in einer Wohngegend ein Ball vor das Auto. 
-* Die Wahrscheinlichkeit dafür, dass unmittelbar hinter dem Ball ein Kind nachgelaufen kommt, beträgt p = 0.99. 
+
+* Die Wahrscheinlichkeit dafür, dass unmittelbar hinter dem Ball ein Kind nachgelaufen kommt, beträgt `\(P = 0.99\)`. 
+
 * Wie groß ist die Wahrscheinlichkeit, dass ein Ball auf die Straße rollt und ein Kind hinterherläuft?
 
 `$$P(B ∧ K) = P(K|B)P(B) = 0.99 · 0.01 = 0.0099$$`
@@ -336,7 +354,7 @@ class: top, left
 
 * Beim Ziehen mit Zurücklegen sind die einzelnen Wahrscheinlichkeiten gleich und die Ziehungen stochastisch unabhängig.
 
-* Beim Ziehen ohne Zurücklegen ändern sich mit jeder Ziehung die Anteile der ’günstigen’ ωi , und daher auch die Wahrscheinlichkeiten. Die Ziehungen sind daher stochastisch abhängig.
+* Beim Ziehen ohne Zurücklegen ändern sich mit jeder Ziehung die Anteile der ’günstigen’ `\(ω_i\)` , und daher auch die Wahrscheinlichkeiten. Die Ziehungen sind daher stochastisch abhängig.
 
 ---
 class: top, left
@@ -346,13 +364,13 @@ class: top, left
 
 **Zufallsexperiment**
 
-* Jedes mögliche Ergebnis aus einem Zufallsexperiment nennen wir ein Elementarereignis ω
+* Jedes mögliche Ergebnis aus einem Zufallsexperiment nennen wir ein Elementarereignis `\(ω\)`
 
-* Die Menge aller möglichen Ereignisse ist definiert als der Ereignisraum Ω
+* Die Menge aller möglichen Ereignisse ist definiert als der Ereignisraum `\(Ω\)`
 
-* Der Ereignisraum Ω heißt diskret, wenn er aus abzählbar vielen Elementarereignissen besteht
+* Der Ereignisraum `\(Ω\)` heißt diskret, wenn er aus abzählbar vielen Elementarereignissen besteht
 
-* Der Ereignisraum Ω heißt stetig, wenn er aus überabzählbar vielen Elementarereignissen besteht
+* Der Ereignisraum `\(Ω\)` heißt stetig, wenn er aus überabzählbar vielen Elementarereignissen besteht
 
 * Zufallsexperiment ist ein allgemeiner Begriff, der Grundlage für die Inferenzstatistik ist
 
@@ -366,17 +384,17 @@ class: top, left
 
 * Zufallsexperiment 1: 
 
-  Einmaliger Wurf mit einer Münze; Ω = { Kopf, Zahl } endlich und abzählbar
+  Einmaliger Wurf mit einer Münze; `\(Ω =\)` { Kopf, Zahl } endlich und abzählbar
 
 * Zufallsexperiment 2: 
 
-   Wurf mit einem Würfel so lange bis zum ersten Mal drei ’Einser’ hintereinander kommen; wir interessieren uns für die Anzahl der notwendigen Würfe; Ω = 3,4,5,··· oder Ω = {k : k natürliche Zahl ≥ 3}; Ω ist diskret und abzählbar unendlich
+   Wurf mit einem Würfel so lange bis zum ersten Mal drei ’Einser’ hintereinander kommen; wir interessieren uns für die Anzahl der notwendigen Würfe; `\(Ω =\)` 3,4,5,··· oder `\(Ω =\)` {k : k natürliche Zahl ≥ 3}; Ω ist diskret und abzählbar unendlich
 
 * Zufallsexperiment 3: 
 
-  Lebensdauer einer Glühbirne; Ω = {x : x ≥ 0}; Ω ist stetig und überabzählbar unendlich
+  Lebensdauer einer Glühbirne; `\(Ω =\)` {x : x ≥ 0}; `\(Ω\)` ist stetig und überabzählbar unendlich
 
-* Richtige Bestimmung von Ω ist Voraussetzung für Richtigkeit jeder weiteren statistischen Analyse
+* Richtige Bestimmung von `\(Ω\)` ist Voraussetzung für Richtigkeit jeder weiteren statistischen Analyse
 
 ---
 class: top, left
@@ -565,7 +583,9 @@ class: top, left
 
 **Diskrete Gleichverteilung**
 
-* Beispiel: X = die erhaltene Augenzahl bei einmaligem Würfeln
+Beispiel: 
+
+X = die erhaltene Augenzahl bei einmaligem Würfeln
 
 .center[
 &lt;img src="bilder/gleichverteilung3.png" width="250px" /&gt;
@@ -680,6 +700,8 @@ class: top, left
 ##### Spezielle diskrete Verteilungen
 
 **Poisson-Verteilung**
+
+&lt;small&gt;
 
 * Diese Verteilung beschreibt ZV, die alle natürliche Zahlen und 0 annehmen können
 
