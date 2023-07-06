@@ -102,12 +102,18 @@ class: top, left
 
 ##### Wann nutzen wir Graphen?
 
+<small>
+
+***
+
 **Univariat:**
 
 * Verteilungen einer Variable visualisieren 
 
   * Histogramm (numerische Variable)
   * Balkendiagramm (kategoriale Variable)
+
+***
 
 **Multivariat:**
 
@@ -124,14 +130,16 @@ class: top, left
 class: top, left
 ### Visualisierung
 
+<small>
+
 #### Graphen
 
 ##### Univariat (haben wir bereits gelernt)
 
 .pull-left[
-**Histogramm für numerische Variablen**
+**Histogramm für numerische Variablen:**
 
-```{r echo = F, out.width = "350px"}
+```{r echo = F, out.width = "300px"}
 set.seed(123)
 N = 30
 df = data.frame(ID = paste0(rep(1:N)),
@@ -142,16 +150,16 @@ ggplot(data = df, aes(x = IQ)) +
   scale_x_continuous(breaks = 0:10) +
   labs(y = "Häufigkeit (N)") +
   theme_classic() +
-  theme(text = element_text(size = 20))
+  theme(text = element_text(size = 25))
 ```
 * **X-Achse:** Ausprägungen der Variablen
 * **Y-Achse:** Absolute/relative Häufigkeiten dieser Ausprägungen
 ]
 
 .pull-right[
-**Balkendiagramm für kategoriale Variablen**
+**Balkendiagramm für kategoriale Variablen:**
 
-```{r echo = F, out.width = "350px"}
+```{r echo = F, out.width = "300px"}
 set.seed(123)
 N = 30
 df = data.frame(ID = paste0(rep(1:N)),
@@ -162,7 +170,7 @@ ggplot(data = df, aes(x = Diagnose)) +
   #scale_x_continuous(breaks = 0:10) +
   labs(y = "Häufigkeit (N)") +
   theme_classic() +
-  theme(text = element_text(size = 20))
+  theme(text = element_text(size = 25))
 ```
 
 * **X-Achse:** Ausprägungen der Variablen
@@ -183,7 +191,7 @@ class: top, left
 
 * Häufiger Anwendungsfall: Vergleich der Ausprägung einer Variable in 2 Gruppen
 
-Beispiel: Grübelneigung in Gruppe A (Depression) und B (Keine Depression)
+**Beispiel:** Grübelneigung in Gruppe A (Depression) und B (Keine Depression)
 
 ```{r echo = F}
 set.seed(123)
@@ -222,7 +230,7 @@ kable(df[,], col.names = NULL)%>%
 
 .pull-left[
 .center[
-```{r echo = F, out.width="350px", out.height="320px"}
+```{r echo = F, out.height="320px"}
 ggplot(df2, aes(x = Grübeln, fill = Gruppe)) +
   geom_histogram() +
   labs(y = "N") +
@@ -267,7 +275,7 @@ kable(df[,], col.names = NULL)%>%
 
 .pull-left[
 .center[
-```{r echo = F, out.width="350px", out.height="320px"}
+```{r echo = F, out.height="320px"}
 ggplot(df2, aes(y = Grübeln, x = Gruppe)) +
   stat_summary(geom = "bar", fun = "mean", fill = "white", colour = "black", width = .5) +
   labs(y = "Grübeln") +
@@ -310,7 +318,7 @@ kable(df[,], col.names = NULL)%>%
 
 .pull-left[
 .center[
-```{r echo = F, out.width="350px", out.height="320px"}
+```{r echo = F,  out.height="320px"}
 ggplot(df2, aes(y = Grübeln, x = Gruppe)) +
   stat_summary(geom = "bar", fun = "mean", fill = "white", colour = "black", width = .5) +
   labs(y = "Grübeln") +
@@ -358,7 +366,7 @@ kable(df[,], col.names = NULL)%>%
 
 .pull-left[
 .center[
-```{r echo = F, out.width="350px", out.height="320px"}
+```{r echo = F, out.height="320px"}
 ggplot(df2, aes(y = Grübeln, x = Gruppe)) +
 geom_boxplot() +
   labs(y = "Grübeln") +
@@ -476,7 +484,7 @@ class: top, left
 
 .pull-left[
 .center[
-```{r echo = F, out.width="350px", out.height="320px"}
+```{r echo = F, out.width="350px"}
 ggplot(df2, aes(y = Tremor, x = Entzug)) +
   stat_summary(geom = "bar", fun = "mean", fill = "white", colour = "black", width = .5) +
   labs(y = "Tremor") +
@@ -488,13 +496,12 @@ ggplot(df2, aes(y = Tremor, x = Entzug)) +
 
 .pull-right[
 .center[
-```{r echo = F, out.width="350px", out.height="320px"}
+```{r echo = F, out.width="350px"}
 # ggplot(df2, aes(y = Tremor, x = Entzug)) +
 # geom_boxplot() +
 #   labs(y = "Tremor") +
 #   theme_classic() +
 #   theme(text = element_text(size = 25))
-
 
 boxplot(Tremor~Entzug,data = df2, cex.lab=2.5, cex.axis=2.5)
 ```
@@ -515,9 +522,9 @@ class: top, left
 
 $\rightarrow$ Wir bräuchten sehr viele Balken/Boxen (so viele wie Ausprägungen auf X-Achse)
 
-Beispiel: 
+**Beispiel:** 
 
-2 numerische Variablen Nachtschlaf (in Stunden) und Leistung in einem Konzentrationstest (0-150 Punkte)
+Zwei numerische Variablen Nachtschlaf (in Stunden) und Leistung in einem Konzentrationstest (0-150 Punkte)
 
 ```{r echo = F}
 set.seed(123)
@@ -561,7 +568,7 @@ kable(df[,], col.names = NULL)%>%
 
 .pull-left[
 .center[
-```{r echo = F, out.width="320px", out.height="300px"}
+```{r echo = F, out.height="300px"}
 ggplot(df2, aes(y = Konzentration, x = Schlaf)) +
 geom_point(size = 4) +
   labs(y = "Konzentration", x = "Schlaf") +
@@ -572,7 +579,7 @@ geom_point(size = 4) +
 ]
 
 .pull-right[
-**Streudiagramm**
+**Streudiagramm:**
 
 * Punktewolke = Wertepaare (Jeder Punkt = 1 Person)
 
@@ -621,7 +628,7 @@ geom_point(size = 4) +
 ]
 
 .pull-right[
-**Streudiagramm**
+**Streudiagramm:**
 
 * Später können wir auch lineare Zusammenhänge zwischen den Variablen visualisieren  
 
@@ -762,7 +769,7 @@ proptable_to_bar_2(prop.table(table(df2$Entzug, df2$Tremor), 2)) +
 ]
 
 .pull-right[
-**Balkendiagramm**
+**Balkendiagramm:**
 
 * Hier funktioniert wieder das Balkendiagramm  
 
@@ -849,7 +856,7 @@ Mangels weiterer Achsen (als X und Y) behelfen wir uns mit sogenannten Aesthetic
 
 .pull-left[
 .center[
-Mit unterschiedlichen Farben und Punktformen
+Mit unterschiedlichen Farben und Punktformen:
 
 ```{r echo = F, out.width="320px", out.height="300px"}
 ggplot(df2, aes(y = Angst, x = Verschmutzungsintensität, colour = Diagnose, shape = Diagnose)) +
@@ -863,7 +870,7 @@ geom_point(size = 4) +
 ]
 .pull-right[
 .center[
-Mit unterschiedlichen Facetten
+Mit unterschiedlichen Facetten:
 
 ```{r echo = F, out.width="320px", out.height="300px"}
 ggplot(df2, aes(y = Angst, x = Verschmutzungsintensität)) +
