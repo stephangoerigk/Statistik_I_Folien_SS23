@@ -59,7 +59,7 @@ class: middle, left
 # Statistik I
 
 ### Einheit 12: Effektstärke und Powerberechnung
-##### 30.01.2023 | Dr. phil. Stephan Goerigk
+##### 12.07.2023 | Prof. Dr. phil. Stephan Goerigk
 
 ---
 class: top, left
@@ -257,7 +257,7 @@ class: top, left
 
 #### Glass’s $Δ$
 
-* Glass’s delta gehört zu der gleichen Familie, wie die Formeln von bereits vorgestellten Formeln von Cohen und Hedge. 
+* Glass’s delta gehört zu der gleichen Familie, wie die bereits vorgestellten Formeln von Cohen und Hedge. 
 
 * Glass’s Δ wurde unsprünglich für experimentelle Studien entwickelt. Anstatt eine gepoolte oder Besselkorrigierte Standardabweichung zu verwenden, wird einfach die Standardabweichung der Kontrollgruppe verwendet. 
 
@@ -385,7 +385,7 @@ class: top, left
 
 WICHTIG: 
 * Der Korrelationskoeffizient $r$ und darauf basierende Maße sind standardisiert. 
-* Das bedeutet, das ein Effekt, der in $r$ angegeben wurde, mit jedem anderen verglichen werden kann.
+* Das bedeutet, dass ein Effekt, der in $r$ angegeben wurde, mit jedem anderen verglichen werden kann.
 * $r$ kann demnach direkt als Effektstärke genutzt werden
 ]
 
