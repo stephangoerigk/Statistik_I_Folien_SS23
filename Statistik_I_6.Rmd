@@ -68,7 +68,7 @@ class: top, left
 
 **Inferenzstatistik: **
 
-Umfasst alle statistischen Verfahren, die es erlauben, trotz der Informationsunvollständigkeit der Stichprobendaten Aussagen über eine Population zu treffen.
+* Umfasst alle statistischen Verfahren, die es erlauben, trotz der Informationsunvollständigkeit der Stichprobendaten Aussagen über eine Population zu treffen.
 
 **Population: **
 
@@ -89,6 +89,8 @@ class: top, left
 * Wenn nur ein Teil der Grundgesamtheit erfasst wird, z.B. 100 Personen, ist die **Informationslage** in Bezug auf die Untersuchungsfrage **unvollständig**. Wir können nicht einfach deskriptiv-statistische Methoden verwenden.
 
 * Wie kann man trotzdem Aussagen treffen, die sich auf alle Personen der Grundgesamtheit beziehen, obwohl nur die Daten einer Stichprobe vorliegen?
+
+***
 
 **Idee:**
 
@@ -119,6 +121,8 @@ class: top, left
 * Praktisch alle psychologischen Theorien enthalten Aussagen über Populationen (nicht nur über isolierte Stichproben)
 
 * Zu ihrer empirischen Überprüfung sind dann **immer** inferenzstatistische Methoden notwendig.
+
+***
 
 Beispiele für psychologische Fragestellungen:
 
@@ -389,17 +393,14 @@ class: top, left
 Ziel der Parameterschätzung: Auf der Basis einer einfachen Zufallsstichprobe eine Aussage darüber treffen, welchen konkreten Wert ein Parameter hat.
 
 Man unterscheidet in der Parameterschätzung zwischen
-* Punktschätzung und 
-* Intervallschätzung
 
-**Punktschätzung:**
-* Ergebnis einer Punktschätzung ist eine konkrete Zahl.
-* Beispiel: Wir gehen auf Basis unserer Stichprobe davon aus, dass der Parameter $𝜋$
-gleich 0.45 ist.
+**1. Punktschätzung:**
+  * Ergebnis einer Punktschätzung ist eine konkrete Zahl.
+  * Beispiel: Wir gehen auf Basis unserer Stichprobe davon aus, dass der Parameter $𝜋$ gleich 0.45 ist.
 
-**Intervallschätzung**
-* Ergebnis einer Intervallschätzung ist ein Intervall von Zahlen.
-* Beispiel: Wir gehen auf Basis unserer Stichprobe davon aus, dass der Parameter $𝜇$ im Bereich zwischen 101 und 108 liegt.
+**2. Intervallschätzung**
+  * Ergebnis einer Intervallschätzung ist ein Intervall von Zahlen.
+  * Beispiel: Wir gehen auf Basis unserer Stichprobe davon aus, dass der Parameter $𝜇$ im Bereich zwischen 101 und 108 liegt.
 
 ---
 class: top, left
