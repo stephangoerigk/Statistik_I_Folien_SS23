@@ -705,12 +705,12 @@ Lösungweg:
 
 $$x_{sortiert}= `r paste(x[order(x)], collapse = ";")`$$
 
-$$n \cdot \alpha = `r n` \cdot 0.25 = `r n * 0.25` \rightarrow I_{0.25} = 4$$
+$$n \cdot \alpha = `r n` \cdot 0.25 = `r n * 0.25` \rightarrow I_{0.25} = 6$$
 $$n \cdot \alpha = `r n` \cdot 0.75 = `r n * 0.75` \rightarrow I_{0.75} = 12$$
 
-$$q_{0.25} = x_{(I_{0.25})} = 9$$
-$$q_{0.75} = x_{(I_{0.75})} = 13.5$$
-$$q_{A}= \widetilde{x}_{0.75} - \widetilde{x}_{0.25} = 13.5 - `r quantile(x, 0.25)` = 4.5$$
+$$q_{0.25} = x_{(I_{0.25})} = 6$$
+$$q_{0.75} = x_{(I_{0.75})} = 11$$
+$$q_{A}= \widetilde{x}_{0.75} - \widetilde{x}_{0.25} = 11 - 6 = 5$$
 
 </font>
 
@@ -746,9 +746,9 @@ Lösungweg:
 $$x_{sortiert}= `r paste(x[order(x)], collapse = ";")`$$
 $$n \cdot \alpha = `r n` \cdot 0.25 = `r n * 0.25` \rightarrow I_{0.25} = 5$$
 $$n \cdot \alpha = `r n` \cdot 0.75 = `r n * 0.75` \rightarrow I_{0.75} = 15$$
-$$q_{0.25} = \frac{x_{(I_{0.25})} + x_{(I_{0.25}+1)}}{2} = `r quantile(x, 0.25)`$$
-$$q_{0.75} = \frac{x_{(I_{0.75})} + x_{(I_{0.75}+1)}}{2} = `r quantile(x, 0.75)`$$
-$$q_{A}= \widetilde{x}_{0.75} - \widetilde{x}_{0.25} = `r quantile(x, 0.75)` - `r quantile(x, 0.25)` = `r IQR(x)`$$
+$$q_{0.25} = \frac{x_{(I_{0.25})} + x_{(I_{0.25}+1)}}{2} = 8.5$$
+$$q_{0.75} = \frac{x_{(I_{0.75})} + x_{(I_{0.75}+1)}}{2} = 14.5$$
+$$q_{A}= \widetilde{x}_{0.75} - \widetilde{x}_{0.25} = 6$$
 
 </font>
 
