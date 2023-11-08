@@ -1,5 +1,5 @@
 ---
-title: "Einheit 1"
+title: "Einheit 4"
 subtitle: "⚔<br/>with xaringan"
 author: "Dr. Stephan Goerigk"
 institute: "RStudio, PBC"
@@ -58,7 +58,7 @@ class: middle, left
 # Statistik I
 
 ### Einheit 4: Visualisierung
-##### 03.05.2023 | Prof. Dr. phil. Stephan Goerigk
+##### 08.11.2023 | Prof. Dr. phil. Stephan Goerigk
 
 ---
 class: top, left
@@ -78,17 +78,17 @@ class: top, left
 
 * Berechnen von Modus, Mittelwert (mehrere Gruppen, aus Häufigkeitstabelle), Median, Spannweite, Varianz, Standardabweichung, Quantile, Quartilabstand
 
-* Standardisierung von Variablen
-
 ---
 class: top, left
 ### Agenda für Heute:
 
 #### Ziel: Effiziente Beschreibung **von 2** Variablen (**bivariate** Statistik)
 
-**Was wir danach wissen werden:**
+**Was wir danach kennen werden:**
 
 * Eigenschaften unterschiedlicher statistischer Graphen
+
+* Situationen in denen diese eingesetzt werden sollten
 
 **Was wir danach können werden:**
 
@@ -110,8 +110,9 @@ class: top, left
 
 * Verteilungen einer Variable visualisieren 
 
-  * Histogramm (numerische Variable)
-  * Balkendiagramm (kategoriale Variable)
+  * Histogramm (numerische Variable; zeigt Häufigkeiten)
+  * Balkendiagramm (kategoriale Variable; zeigt Häufigkeiten)
+  * Boxplot (zumindest ordinale Variable; zeigt Median und IQR)
 
 ***
 
@@ -119,12 +120,12 @@ class: top, left
 
 * Ausprägung einer Variable innerhalb Kategorien einer anderen Variable (Gruppenvergleich)
 
-  * Balkendiagramm (Höhe des Balkens z.B. Mittelwert)
-  * Boxplot (Median und IQR)
+  * Balkendiagramm (Höhe des Balkens = stat. Kennwert einer Gruppe, z.B. Mittelwert)
+  * Boxplot (zumindest ordinale Variable; zeigt Median und IQR einer Gruppe)
 
 * Gemeinsames Variieren von 2 (kontinuierlichen) Variablen
 
-  * Streudiagramm
+  * Streudiagramm (Punkt = Messwertpaar 2er Variablen für 1 Person im Datensatz)
 
 ---
 class: top, left
@@ -136,18 +137,20 @@ class: top, left
 
 ##### Univariat (haben wir bereits gelernt)
 
+<small>
+
 .pull-left[
 **Histogramm für numerische Variablen:**
 
 ```{r echo = F, out.width = "300px"}
 set.seed(123)
 N = 30
-df = data.frame(ID = paste0(rep(1:N)),
-                IQ =  c(round(rnorm(N, 5.5, 2.5)))
+df = data.frame(ID = paste0(rep(1:1000)),
+                IQ =  c(round(rnorm(1000, 100, 15)))
 )
 ggplot(data = df, aes(x = IQ)) +
   geom_bar(fill = "black", width = .5) +
-  scale_x_continuous(breaks = 0:10) +
+  #scale_x_continuous(breaks = 0:10) +
   labs(y = "Häufigkeit (N)") +
   theme_classic() +
   theme(text = element_text(size = 25))
@@ -190,6 +193,8 @@ class: top, left
 * Manchmal wollen wir jedoch auch andere Statistiken darstellen (z.B. Mittelwert)
 
 * Häufiger Anwendungsfall: Vergleich der Ausprägung einer Variable in 2 Gruppen
+
+***
 
 **Beispiel:** Grübelneigung in Gruppe A (Depression) und B (Keine Depression)
 
@@ -367,11 +372,13 @@ kable(df[,], col.names = NULL)%>%
 .pull-left[
 .center[
 ```{r echo = F, out.height="320px"}
-ggplot(df2, aes(y = Grübeln, x = Gruppe)) +
-geom_boxplot() +
-  labs(y = "Grübeln") +
-  theme_classic() +
-  theme(text = element_text(size = 25))
+# ggplot(df2, aes(y = Grübeln, x = Gruppe)) +
+# geom_boxplot() +
+#   labs(y = "Grübeln") +
+#   theme_classic() +
+#   theme(text = element_text(size = 25))
+
+boxplot(Grübeln~Gruppe,data = df2, cex.lab=2.5, cex.axis=2.5)
 ```
 ]
 ]
@@ -463,9 +470,9 @@ Intensität im Rating des Tremors (Händezittern) zwischen heroinabhängigen Pat
 ```{r echo = F}
 set.seed(123)
 N = 12
-df = data.frame(ID = c(paste0(rep(1:N)), "13"),
-                Entzug = c(rep("A", N/2), rep("B", N/2), "B"),
-                Tremor = round(c(rnorm(N/2, 4, 3), rnorm(N/2, 10, 4), 20))
+df = data.frame(ID = c(paste0(rep(1:N))),
+                Entzug = c(rep("A", N/2), rep("B", N/2)),
+                Tremor = round(c(1,  4,  6,  7,  8,  9, 5,  8,  12,  10,  8,  9))
 )
 df2 = df
 df = as.data.frame(t(df))
@@ -507,6 +514,28 @@ boxplot(Tremor~Entzug,data = df2, cex.lab=2.5, cex.axis=2.5)
 ```
 ]
 ]
+
+---
+class: top, left
+### Visualisierung
+
+#### Graphen (bivariat)
+
+##### Lösung für Gruppe A:
+
+
+$$x_{sortiert}= `r paste(df2$Tremor[df2$Entzug == "A"][order(df2$Tremor[df2$Entzug == "A"])], collapse = ";")`$$
+
+$$Md = \frac{6+7}{2} = 6.5$$
+
+$$n \cdot \alpha = `r 6` \cdot 0.25 = `r 6 * 0.25` \rightarrow I_{0.25} = 2$$
+$$n \cdot \alpha = `r 6` \cdot 0.75 = `r 6 * 0.75` \rightarrow I_{0.75} = 5$$
+
+$$q_{0.25} = x_{(I_{0.25})} = x_{(2)} = 4$$
+$$q_{0.75} = x_{(I_{0.75})} = x_{(5)} = 8$$
+$$IQR \cdot 1.5 = 6$$
+$\rightarrow$ alle Werte < -2 und > 14 sind Ausreißer. Wir zeichnen jedoch nur bis zu den maximal verfügbaren Werten (1 und 9).
+
 
 ---
 class: top, left
