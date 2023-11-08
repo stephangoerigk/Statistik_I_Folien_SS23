@@ -1,5 +1,5 @@
 ---
-title: "Einheit 1"
+title: "Einheit 3"
 subtitle: "⚔<br/>with xaringan"
 author: "Dr. Stephan Goerigk"
 institute: "RStudio, PBC"
@@ -300,7 +300,7 @@ kable(df[,], col.names = NULL)
 ```
 ]
 
-Formel: $$R = x_{n}- x_{1}$$
+>Formel: $$R = x_{n}- x_{1}$$
 
 $$R = 12- 8 = 4$$
 
@@ -358,7 +358,10 @@ df = as.data.frame(t(df))
 kable(df[,], col.names = NULL)
 ```
 
-.left[Formel:]
+.left[
+>Formel:
+
+]
 <small>
 $$s^2=\frac{\sum\limits _{i=1}^{n}(x_{i}-\bar{x})^2}{n}$$
 
@@ -410,7 +413,10 @@ df = as.data.frame(t(df))
 kable(df[,], col.names = NULL)
 ```
 
-.left[Formel:] $$\sigma^2=\frac{\sum\limits _{i=1}^{n}(x_{i}-\bar{x})^2}{n-1}$$
+.left[
+>Formel:
+
+] $$\sigma^2=\frac{\sum\limits _{i=1}^{n}(x_{i}-\bar{x})^2}{n-1}$$
 ]
 ]
 .pull-right[
@@ -560,7 +566,7 @@ class: top, left
 
 >* 99.7% aller Daten liegen innerhalb 3 Standardabweichungen vom Mittelwert
 
-$\rightarrow$ Bei normalverteilten Daten reicht also ein kurzer Blick auf den Mittelwert und die Standardabweichung um eine Vorstellung davon zu erhalten in welchen Bereich sich die meisten Daten bewegen
+$\rightarrow$ Bei normalverteilten Daten reicht also ein kurzer Blick auf den Mittelwert und die Standardabweichung, um eine Vorstellung davon zu erhalten, in welchen Bereich sich die meisten Daten bewegen
 
 ---
 class: top, left
@@ -589,7 +595,11 @@ df = as.data.frame(t(df))
 kable(df[,], col.names = NULL)
 ```
 ]
-.left[Formel:] 
+.left[
+>Formel:
+
+]
+
 <small>
 
 $$s=\sqrt{\frac{\sum\limits _{i=1}^{n}(x_{i}-\bar{x})^2}{n}}$$
@@ -647,7 +657,7 @@ class: top, left
 
 * Zwischen dem unteren und oberen Quartil liegen **50% aller Werte**
 
-Formel: $$q_{A}= \widetilde{x}_{0.75} - \widetilde{x}_{0.25}$$
+>Formel: $$q_{A}= \widetilde{x}_{0.75} - \widetilde{x}_{0.25}$$
 
 ---
 class: top, left
@@ -665,7 +675,7 @@ Berechnung der Quantile:
 
 * Die Quantile mit $α = 0.25$ und $α = 0.75$ heißen unteres bzw. oberes Quartil
 
-Formel:
+>Formel:
 
 .center[
 ```{r eval = TRUE, echo = F, out.width = "550px"}
@@ -705,12 +715,12 @@ Lösungweg:
 
 $$x_{sortiert}= `r paste(x[order(x)], collapse = ";")`$$
 
-$$n \cdot \alpha = `r n` \cdot 0.25 = `r n * 0.25` \rightarrow I_{0.25} = 6$$
+$$n \cdot \alpha = `r n` \cdot 0.25 = `r n * 0.25` \rightarrow I_{0.25} = 4$$
 $$n \cdot \alpha = `r n` \cdot 0.75 = `r n * 0.75` \rightarrow I_{0.75} = 12$$
 
-$$q_{0.25} = x_{(I_{0.25})} = 6$$
-$$q_{0.75} = x_{(I_{0.75})} = 11$$
-$$q_{A}= \widetilde{x}_{0.75} - \widetilde{x}_{0.25} = 11 - 6 = 5$$
+$$q_{0.25} = x_{(I_{0.25})} = x_{(4)} = 6$$
+$$q_{0.75} = x_{(I_{0.75})} = x_{(12)} = 12$$
+$$q_{A}= \widetilde{x}_{0.75} - \widetilde{x}_{0.25} = 12 - 6 = 6$$
 
 </font>
 
@@ -746,12 +756,146 @@ Lösungweg:
 $$x_{sortiert}= `r paste(x[order(x)], collapse = ";")`$$
 $$n \cdot \alpha = `r n` \cdot 0.25 = `r n * 0.25` \rightarrow I_{0.25} = 5$$
 $$n \cdot \alpha = `r n` \cdot 0.75 = `r n * 0.75` \rightarrow I_{0.75} = 15$$
-$$q_{0.25} = \frac{x_{(I_{0.25})} + x_{(I_{0.25}+1)}}{2} = 8.5$$
-$$q_{0.75} = \frac{x_{(I_{0.75})} + x_{(I_{0.75}+1)}}{2} = 14.5$$
-$$q_{A}= \widetilde{x}_{0.75} - \widetilde{x}_{0.25} = 6$$
+$$q_{0.25} = \frac{x_{(I_{0.25})} + x_{(I_{0.25}+1)}}{2} = \frac{x_{(5)} + x_{(6)}}{2} = \frac{7 + 9}{2} = 8$$
+$$q_{0.75} = \frac{x_{(I_{0.75})} + x_{(I_{0.75}+1)}}{2} = \frac{x_{(15)} + x_{(16)}}{2} = \frac{13 + 14}{2} = 13.5$$
+$$q_{A}= \widetilde{x}_{0.75} - \widetilde{x}_{0.25} = 13.5 - 8 =  5.5$$
 
 </font>
 
+
+---
+class: top, left
+### Skalenniveaus und statistische Kennwerte
+
+#### Statistische Kennwerte
+
+##### Eingipfelige vs. mehrgipfelige Verteilung
+
+```{r include=FALSE}
+simulate <- function(lambda=0.3, mu=c(0, 4), sd=c(1, 1), n.obs=10^5) {
+    x1 <- rnorm(n.obs, mu[1], sd[1])
+   
+}
+data <- simulate()
+d <- density(data)
+v <- optimize(approxfun(d$x,d$y),interval=c(1,4))$minimum
+
+library(tidyverse)
+
+hd <- hist(data,plot=FALSE,right=TRUE)
+(hd_df <- tibble(
+    counts=hd$counts,
+    density=hd$density,
+    mids=hd$mids
+))
+
+(rel_range <-range(hd$counts)/range(hd$density))
+(dens_to_c <- rel_range[1])
+```
+
+.pull-left[
+```{r echo=FALSE, out.width = "420px"}
+one = ggplot(data=hd_df,mapping = aes(x=mids)) +
+    geom_col(mapping=aes(y=counts),
+             color="black",fill="white")+
+    geom_line(data=data.frame(dx=d$x,dy=d$y),
+              mapping=aes(x=dx,y=dy*dens_to_c),
+              linetype = "dashed", color = "red") +
+  labs(y = "", x = "") +
+  ggtitle("Eingipfelige Verteilung (klassische Lagemaße ok)") +
+  theme_classic() +
+  theme(text = element_text(size = 16))
+one
+```
+]
+
+```{r include=FALSE}
+simulate <- function(lambda=0.3, mu=c(0, 4), sd=c(1, 1), n.obs=10^5) {
+    x1 <- rnorm(n.obs, mu[1], sd[1])
+    x2 <- rnorm(n.obs, mu[2], sd[2])    
+    return(ifelse(runif(n.obs) < lambda, x1, x2))
+}
+data <- simulate()
+d <- density(data)
+v <- optimize(approxfun(d$x,d$y),interval=c(1,4))$minimum
+
+library(tidyverse)
+
+hd <- hist(data,plot=FALSE,right=TRUE)
+(hd_df <- tibble(
+    counts=hd$counts,
+    density=hd$density,
+    mids=hd$mids
+))
+
+(rel_range <-range(hd$counts)/range(hd$density))
+(dens_to_c <- rel_range[1])
+```
+
+.pull-right[
+```{r echo=FALSE, out.width = "420px"}
+two = ggplot(data=hd_df,mapping = aes(x=mids)) +
+    geom_col(mapping=aes(y=counts),
+             color="black",fill="white")+
+    geom_line(data=data.frame(dx=d$x,dy=d$y),
+              mapping=aes(x=dx,y=dy*dens_to_c),
+              linetype = "dashed", color = "red") +
+  labs(y = "", x = "") +
+  ggtitle("Zweigipfelige Verteilung (mehrere lokale Maxima)") +
+  theme_classic()+
+  theme(text = element_text(size = 16))
+two
+```
+]
+
+---
+class: top, left
+### Skalenniveaus und statistische Kennwerte
+
+#### Statistische Kennwerte
+
+##### **Schiefe** (*engl. curtosis*):
+
+* Die Schiefe $g_1$ ist eine Maßzahl, die uns angibt, in welche Richtung eine Häufigkeitsverteilung schief ist.
+
+* Ist $g_1=0$, so ist die Verteilung symmetrisch.
+
+* Je stärker negativ/positiv $g_1$ ist, desto linksschiefer/rechtsschiefer ist die Verteilung.
+
+* Die Schiefe ist sinnvoll für eingipfelige Verteilungen.
+
+* ACHTUNG: Muss in Prüfung nicht berechnet werden.
+
+>Formel:
+
+.center[
+```{r eval = TRUE, echo = F, out.width = "320px"}
+knitr::include_graphics("bilder/schiefe.png")
+```
+]
+
+---
+class: top, left
+### Skalenniveaus und statistische Kennwerte
+
+#### Statistische Kennwerte
+
+##### **Schiefe** (*engl. curtosis*):
+
+.pull-left[
+.center[
+```{r eval = TRUE, echo = F, out.width = "550px"}
+knitr::include_graphics("bilder/symmetrisch.png")
+```
+]
+]
+.pull-right[
+.center[
+```{r eval = TRUE, echo = F, out.width = "450px"}
+knitr::include_graphics("bilder/schief.png")
+```
+]
+]
 
 ---
 class: top, left
@@ -781,31 +925,7 @@ knitr::include_graphics("bilder/streuungsmasse.png")
 ```
 ]
 
----
-class: top, left
-### Skalenniveaus und statistische Kennwerte
 
-#### Statistische Kennwerte
-
-##### **Schiefe** (*engl. curtosis*):
-
-* Die Schiefe $g_1$ ist eine Maßzahl, die uns angibt, in welche Richtung eine Häufigkeitsverteilung schief ist.
-
-* Ist $g_1=0$, so ist die Verteilung symmetrisch.
-
-* Je stärker negativ/positiv $g_1$ ist, desto linksschiefer/rechtsschiefer ist die Verteilung.
-
-* Die Schiefe ist sinnvoll für eingipfelige Verteilungen.
-
-* ACHTUNG: Muss in Prüfung nicht berechnet werden.
-
-Formel:
-
-.center[
-```{r eval = TRUE, echo = F, out.width = "320px"}
-knitr::include_graphics("bilder/schiefe.png")
-```
-]
 
 ---
 class: top, left
@@ -912,8 +1032,6 @@ class: top, left
 * Varianz und Standardabweichung nur bei **metrischen Daten ohne Ausreißer** sinnvoll.
 
 * Bei Vorliegen von ordinal skalierten Daten und Ausreißern berechnen wir den **Quartilabstand**.
-
-* **Standardisierung** kann genutzt werden, um Werte aus unterschiedlichen Verteilungen vergleichbar zu machen.
 
 * Die erste Tabelle eines Papers ist i.d.R. eine **Stichprobenbeschreibung**. Diese enthält für kategoriale Variablen absolute/relative Häufigkeiten und für numerische Variablen Lagemaße/Streuungsmaße.
 ]

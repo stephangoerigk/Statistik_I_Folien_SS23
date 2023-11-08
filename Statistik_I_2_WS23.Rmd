@@ -1,5 +1,5 @@
 ---
-title: "Einheit 1"
+title: "Einheit 2"
 subtitle: "⚔<br/>with xaringan"
 author: "Dr. Stephan Goerigk"
 institute: "RStudio, PBC"
