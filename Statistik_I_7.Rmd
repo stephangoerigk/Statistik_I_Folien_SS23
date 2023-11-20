@@ -129,11 +129,12 @@ Zur erfolgreichen Durchführung eines Hypothesentests müssen folgende wichtige 
 
 3. Festlegung des Annahme- und Ablehnungsbereichs der Nullhypothese (kritischer Wert)
 
-4. Berechnung Teststatistik (Beobachtungswert in auf Wahrscheinlichkeitsverteilung abbilden)
-  * z-Wert $\rightarrow$ Mittelwerte, wenn $\sigma$ in Population bekannt
-  * t-Wert $\rightarrow$ Mittelwerte, wenn $\sigma$ in Population nicht bekannt
-  * F-Wert $\rightarrow$ Varianzen
-  * $\chi^2$-Wert $\rightarrow$ Häufigkeiten/Proportionen
+4. Beobachtungswert auf Wahrscheinlichkeitsverteilung abbilden
+  * Binomialverteilung $\rightarrow$ Wahrscheinlichkeiten
+  * z-Verteilung $\rightarrow$ Mittelwerte, wenn $\sigma$ in Population bekannt
+  * t-Verteilung $\rightarrow$ Mittelwerte, wenn $\sigma$ in Population nicht bekannt
+  * F-Verteilung $\rightarrow$ Varianzen
+  * $\chi^2$-Verteilung $\rightarrow$ Häufigkeiten/Proportionen
 
 5. Vergleich kritischer Wert und Teststatistik
 

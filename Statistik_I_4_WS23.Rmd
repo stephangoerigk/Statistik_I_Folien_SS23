@@ -372,13 +372,13 @@ kable(df[,], col.names = NULL)%>%
 .pull-left[
 .center[
 ```{r echo = F, out.height="320px"}
-# ggplot(df2, aes(y = Grübeln, x = Gruppe)) +
-# geom_boxplot() +
-#   labs(y = "Grübeln") +
-#   theme_classic() +
-#   theme(text = element_text(size = 25))
+ggplot(df2, aes(y = Grübeln, x = Gruppe)) +
+geom_boxplot() +
+  labs(y = "Grübeln") +
+  theme_classic() +
+  theme(text = element_text(size = 25))
 
-boxplot(Grübeln~Gruppe,data = df2, cex.lab=2.5, cex.axis=2.5)
+#boxplot(Grübeln~Gruppe,data = df2, cex.lab=2.5, cex.axis=2.5)
 ```
 ]
 ]
@@ -510,6 +510,7 @@ ggplot(df2, aes(y = Tremor, x = Entzug)) +
 #   theme_classic() +
 #   theme(text = element_text(size = 25))
 
+par(mar = c(2, 6, 2, 2))
 boxplot(Tremor~Entzug,data = df2, cex.lab=2.5, cex.axis=2.5)
 ```
 ]
