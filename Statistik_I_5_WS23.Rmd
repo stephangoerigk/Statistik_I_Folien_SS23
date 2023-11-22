@@ -465,7 +465,7 @@ class: top, left
 
 #### Beispiel Angststörungen:
 
-* Sei nun $X$ eine Zufallsvariable, die den Wert 1 annimmt, falls die zufällig gezogene Person depressiv ist, und 0, falls sie es nicht ist.
+* Sei nun $X$ eine Zufallsvariable, die den Wert 1 annimmt, falls die zufällig gezogene Person eine Angststörung hat, und 0, falls nicht.
 
 * Diese Zufallsvariable ist eine Bernoulli-Variable und folgt somit einer Bernoulli-Verteilung.
 
@@ -486,11 +486,11 @@ class: top, left
 
 Zusammengefasst: Unter der Voraussetzung, dass 
 * jede Person in der Population die gleiche Wahrscheinlichkeit hat, gezogen zu werden,
-* $X$ eine Zufallsvariable ist, die den Wert 1 annimmt, falls die gezogene Person depressiv ist, und 0, falls nicht,
+* $X$ eine Zufallsvariable ist, die den Wert 1 annimmt, falls die gezogene Person eine Angststörung hat, und 0, falls nicht,
 
-folgt X einer Bernoulli-Verteilung und der Wert des Parameters $𝝅$ dieser Bernoulli-Verteilung ist identisch mit dem Wert der relativen Häufigkeit $h_{A}$ der Depression in der Population.
+folgt X einer Bernoulli-Verteilung und der Wert des Parameters $𝝅$ dieser Bernoulli-Verteilung ist identisch mit dem Wert der relativen Häufigkeit $h_{A}$ der Angststörung in der Population.
 
-* Wenn wir herausfinden wollen, wie hoch die relative Häufigkeit der Depression in der Population ist, müssen wir lediglich herausfinden, welchen Wert der Parameter $𝜋$ hat.
+* Wenn wir herausfinden wollen, wie hoch die relative Häufigkeit der Angststörung in der Population ist, müssen wir lediglich herausfinden, welchen Wert der Parameter $𝜋$ hat.
 * Wenn wir z.B. wüssten, dass $𝜋 = 0.3$ ist, wüssten wir auch, dass die relative Häufigkeit der Angststörung in der Population $h_{A}$ = 0.3 ist.
 * Da $𝜋$ ein Parameter einer Wahrscheinlichkeitsverteilung ist, können wir das Problem der Bestimmung einer deskriptivstatistischen Maßzahl in der Population $(h_{A})$ komplett in die Wahrscheinlichkeitstheorie verlagern und somit alle Mittel verwenden, die uns diese zur Verfügung stellt.
 
