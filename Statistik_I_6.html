@@ -28,25 +28,7 @@ class: middle, left
 # Statistik I
 
 ### Einheit 6: Stichprobe, Grundgesamtheit und Stichprobenfehler
-##### 17.05.2023 | Prof. Dr. phil. Stephan Goerigk
-
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-#### Wiederholung:
-
-**Inferenzstatistik: **
-
-Umfasst alle statistischen Verfahren, die es erlauben, trotz der Informationsunvollständigkeit der Stichprobendaten Aussagen über eine Population zu treffen.
-
-**Population: **
-
-* Gesamtheit aller Merkmalsträger:innen, auf die eine Untersuchungsfrage gerichtet ist.
-
-**Stichprobe: **
-
-* Auswahl bestimmter Merkmalsträger:innen aus einer Population
+##### 22.11.2023 | Prof. Dr. phil. Stephan Goerigk
 
 ---
 class: top, left
@@ -59,6 +41,8 @@ class: top, left
 * Wenn nur ein Teil der Grundgesamtheit erfasst wird, z.B. 100 Personen, ist die **Informationslage** in Bezug auf die Untersuchungsfrage **unvollständig**. Wir können nicht einfach deskriptiv-statistische Methoden verwenden.
 
 * Wie kann man trotzdem Aussagen treffen, die sich auf alle Personen der Grundgesamtheit beziehen, obwohl nur die Daten einer Stichprobe vorliegen?
+
+***
 
 **Idee:**
 
@@ -77,156 +61,6 @@ class: top, left
 .center[
 &lt;img src="bilder/zfg.png" width="900px" /&gt;
 ]
-
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-#### Psychologische Fragestellungen:
-
-* Praktisch alle psychologischen Theorien enthalten Aussagen über Populationen (nicht nur über isolierte Stichproben)
-
-* Zu ihrer empirischen Überprüfung sind dann **immer** inferenzstatistische Methoden notwendig.
-
-Beispiele für psychologische Fragestellungen:
-
-* **Beispiel 1 (diskret):**
-  * Wir interessieren uns für die relative Häufigkeit `\(h_{A}\)` der Personen in Europa, die an Angststörungen erkrankt sind.
-
-* **Beispiel 2 (stetig):**
-  * Wir interessieren uns für den Mittelwert `\(\bar{x}_{IQ}\)` und die empirische Varianz `\(s^2_{empIQ}\)` des
-Intelligenzquotienten (IQ) von Personen in Europa
-
-
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-#### Zufällige Ziehung einer einzelnen Person
-
-Zufällige Ziehung einer **einzelnen** Person aus einer Population von N Personen:
-
-Dieser Vorgang ist ein **Zufallsexperiment**:
-
-* Wir wissen im Voraus nicht, welche Person gezogen wird.
-
-* Die Ergebnismenge Ω ist die Menge aller Personen in der Population:
-
-`$$Ω = {𝑃𝑒𝑟𝑠𝑜𝑛_{1},𝑃𝑒𝑟𝑠𝑜𝑛_{ 2},...,𝑃𝑒𝑟𝑠𝑜𝑛_{𝑖},...,𝑃𝑒𝑟𝑠𝑜n _{𝑁}}$$`
-* Wir setzen voraus, dass jede Person i in der Population die **gleiche Wahrscheinlichkeit** hat, gezogen zu werden.
-
-* Alle Elementarereignisse haben die gleiche Wahrscheinlichkeit:
-
-$$P({Person_{i}})=\frac{1}{N} $$
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-#### Beispiel Angststörungen:
-
-* Wir interessieren uns für die relative Häufigkeit `\(h_{A}\)` der Personen in Deutschland, die an Angststörungen erkrankt sind.
-
-* Sei `\(N_{A}\)` die Anzahl der Angstpatienten in der Population und `\(A_{A}\)` die Menge der Angstpatienten in der Population:
-
-`$$A_{A} = {Patient_{1},Patient_{ 2},...,Patient_{𝑖},...,Patient_{𝑁}}$$`
-
-* Die relative Häufigkeit der Angstpatienten in der Population ist also `\(h_{A}=\frac{N_{A}}{N}\)`
-
-* Die Wahrscheinlichkeit, zufällig eine Angstpatient:in zu ziehen ist:
-
-`$$P(A_{A}) = P({Patient_{1}}) + P({Patient_{2}}) + P({Patient_{N_{A}}})$$`
-* Die Wahrscheinlichkeit dafür, zufällig eine Angstpatient:in zu ziehen, entspricht also der relativen Häufigkeit der Angststörung in der Population:
-
-`$$P(A_{A}) = h_{A}$$`
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-#### Beispiel Angststörungen:
-
-* Sei nun `\(X\)` eine Zufallsvariable, die den Wert 1 annimmt, falls die zufällig gezogene Person depressiv ist, und 0, falls sie es nicht ist.
-
-* Diese Zufallsvariable ist eine Bernoulli-Variable und folgt somit einer Bernoulli-Verteilung.
-
-* Der Parameter `\(𝜋\)` der Bernoulli-Verteilung entspricht der Wahrscheinlichkeit, dass `\(X\)` den Wert 1 annimmt, also der Wahrscheinlichkeit, eine Angstpatient:in zu ziehen. 
-
-* Diese Wahrscheinlichkeit entspricht wiederum der relativen Häufigkeit der Angststörung in der Population (siehe letzte Folie).
-
-Formal:
-
-`$$𝜋= P(X=1)= P(A_{A}) = h_{A}$$`
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-#### Beispiel Angststörungen:
-
-Zusammengefasst: Unter der Voraussetzung, dass 
-* jede Person in der Population die gleiche Wahrscheinlichkeit hat, gezogen zu werden,
-* `\(X\)` eine Zufallsvariable ist, die den Wert 1 annimmt, falls die gezogene Person depressiv ist, und 0, falls nicht,
-
-folgt X einer Bernoulli-Verteilung und der Wert des Parameters `\(𝝅\)` dieser Bernoulli-Verteilung ist identisch mit dem Wert der relativen Häufigkeit `\(h_{A}\)` der Depression in der Population.
-
-* Wenn wir herausfinden wollen, wie hoch die relative Häufigkeit der Depression in der Population ist, müssen wir lediglich herausfinden, welchen Wert der Parameter `\(𝜋\)` hat.
-* Wenn wir z.B. wüssten, dass 𝜋 = 0.3 ist, wüssten wir auch, dass die relative Häufigkeit der Angststörung in der Population `\(h_{A}\)` = 0.3 ist.
-* Da `\(𝜋\)` ein Parameter einer Wahrscheinlichkeitsverteilung ist, können wir das Problem der Bestimmung einer deskriptivstatistischen Maßzahl in der Population `\((h_{A})\)` komplett in die Wahrscheinlichkeitstheorie verlagern und somit alle Mittel verwenden, die uns diese zur Verfügung stellt.
-
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-#### Beispiel IQ:
-
-.pull-left[
-* Wir interessieren uns für den Mittelwert `\(\bar{x}_{IQ}\)` und die empirische Varianz `\(s^2_{empIQ}\)` des IQs von Personen in Europa
-
-* Wir setzen voraus, dass das Histogramm der Variable IQ in der Population der Personen in Europa durch die Wahrscheinlichkeitsdichtefunktion einer Normalverteilung approximiert werden kann, d.h. dass das Histogramm die „Form“ der Dichte einer Normalverteilung hat.
-
-* Dies ist eine **Annahme**, von der wir nicht wissen, ob sie zutrifft. Wir werden jedoch Methoden kennenlernen, um die Plausibilität dieser Annahme zu überprüfen.
-
-]
-
-.pull-right[
-.center[
-&lt;img src="Statistik_I_6_files/figure-html/unnamed-chunk-2-1.png" width="450px" height="450px" /&gt;
-]
-]
-
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-#### Beispiel IQ:
-
-* Außerdem setzen wir wieder voraus, dass alle Personen die **gleiche Wahrscheinlichkeit** haben, gezogen zu werden.
-
-* Sei nun `\(X\)` eine Zufallsvariable, die für den IQ der zufällig gezogenen Person steht.
-* Man kann dann beweisen, dass diese Zufallsvariable `\(X\)` einer Normalverteilung folgt und der Parameter `\(𝜇\)` dieser Normalverteilung dem Mittelwert des IQs in der Population entspricht:
-  
-`$$𝜇 = \bar{x}_{IQ}$$`
-
-* der Parameter `\(𝜎^2\)` dieser Normalverteilung der empirischen Varianz des IQs in der Population entspricht:
-
-`$$𝜎^2 = s^2_{empIQ}$$`
-
-* Der Beweis hierfür funktioniert ähnlich wie bei der Bernoulli-Verteilung, ist aber deutlich aufwendiger.
-
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-#### Beispiel IQ:
-
-**Zusammengefasst:** Unter der Voraussetzung, dass
-* das Histogramm des IQs in der Population der Personen in Deutschland durch die Wahrscheinlichkeitsdichtefunktion einer Normalverteilung approximiert werden kann,
-
-* jede Person in der Population die gleiche Wahrscheinlichkeit hat, gezogen zu werden,
-
-* `\(X\)` eine Zufallsvariable ist, die für den IQ der gezogenen Person steht
-
-folgt `\(X\)` einer Normalverteilung und
-  * der Wert des Parameters `\(𝝁\)` dieser Normalverteilung ist identisch mit dem Mittelwert `\(\bar{x}_{IQ}\)` des IQs in der Population,
-  * der Wert des Parameters `\(𝝈^2\)` dieser Normalverteilung ist identisch mit der empirischen Varianz `\(s^2_{empIQ}\)` des IQs in der Population.
 
 ---
 class: top, left
@@ -344,17 +178,14 @@ class: top, left
 Ziel der Parameterschätzung: Auf der Basis einer einfachen Zufallsstichprobe eine Aussage darüber treffen, welchen konkreten Wert ein Parameter hat.
 
 Man unterscheidet in der Parameterschätzung zwischen
-* Punktschätzung und 
-* Intervallschätzung
 
-**Punktschätzung:**
-* Ergebnis einer Punktschätzung ist eine konkrete Zahl.
-* Beispiel: Wir gehen auf Basis unserer Stichprobe davon aus, dass der Parameter `\(𝜋\)`
-gleich 0.45 ist.
+**1. Punktschätzung:**
+  * Ergebnis einer Punktschätzung ist eine konkrete Zahl.
+  * Beispiel: Wir gehen auf Basis unserer Stichprobe davon aus, dass der Parameter `\(𝜋\)` gleich 0.45 ist.
 
-**Intervallschätzung**
-* Ergebnis einer Intervallschätzung ist ein Intervall von Zahlen.
-* Beispiel: Wir gehen auf Basis unserer Stichprobe davon aus, dass der Parameter `\(𝜇\)` im Bereich zwischen 101 und 108 liegt.
+**2. Intervallschätzung**
+  * Ergebnis einer Intervallschätzung ist ein Intervall von Zahlen.
+  * Beispiel: Wir gehen auf Basis unserer Stichprobe davon aus, dass der Parameter `\(𝜇\)` im Bereich zwischen 101 und 108 liegt.
 
 ---
 class: top, left
@@ -416,13 +247,13 @@ class: top, left
 
 .pull-left[
 .center[
-&lt;img src="Statistik_I_6_files/figure-html/unnamed-chunk-3-1.png" width="450px" height="450px" /&gt;
+&lt;img src="Statistik_I_6_files/figure-html/unnamed-chunk-2-1.png" width="450px" height="450px" /&gt;
 ]
 ]
 
 .pull-right[
 .center[
-&lt;img src="Statistik_I_6_files/figure-html/unnamed-chunk-4-1.png" width="450px" height="450px" /&gt;
+&lt;img src="Statistik_I_6_files/figure-html/unnamed-chunk-3-1.png" width="450px" height="450px" /&gt;
 ]
 ]
 
@@ -782,7 +613,7 @@ class: top, left
 
 #### Nutzen von Wahrscheinlichkeitsverteilungen zur Quantifizierung des Stichprobenfehlers:
 
-**Z.B. Standardnormalverteilung (N~0,1):**
+**Wiederholung Standardnormalverteilung (N~0,1):**
 
 * Quantile der Standardnormalverteilung sind tabelliert
 
@@ -1078,249 +909,6 @@ class: top, left
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-**Standardnormalverteilung (N~0,1):**
-
-Bedeutung der p-Werte
-
-* Die Felder in der Tabelle geben Ihnen die Wahrscheinlichkeit `\(P\)` an, dass genau der ausgewählte z-Wert oder ein kleinerer z-Wert auftritt.
-
-* Die Wahrscheinlichkeit, die Sie in den Feldern der z Tabelle finden, entspricht der Fläche unter der Verteilung.
-
-* Diese  Fläche ist das Integral der Dichtefunktion von `\(-∞\)` bis z.
-
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-**Standardnormalverteilung (N~0,1):**
-
-**Beispiel: Orientierung in der z-Tabelle**
-
-Aufgabe: Sie suchem den z-Wert 0.35.
-
-**Schritt 1:** Schauen Sie die 1. Spalte an
-
-In der ersten Spalte (senkrecht) finden Sie die ersten zwei Ziffern 0.3 des z-Werts. 
-
-**Schritt 2:** Schauen Sie die 2. Spalte an
-
-Die dritte Ziffer 0.05 (die zweite Nachkommastelle), findet sich in der 3. Spalte.
-
-**Schritt 3:** Wahrscheinlichkeit finden
-
-Das Feld, in dem sich nun die Zeile mit 0.3 und die Spalte mit 0.05 kreuzen, ist die gesuchte Wahrscheinlichkeit für 0.35 oder einen kleineren z-Wert also `\(P(X ≤ 0.35) =0.63683\)`
-
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-**Standardnormalverteilung (N~0,1):**
-
-Negative Werte in der z-Werte Tabelle:
-
-Wie Sie wahrscheinlich gesehen haben, fängt die z-Tabelle bei 0 an. Was machen Sie also, wenn Ihr gegebener z-Wert negativ ist?
-
-Dafür gibt es einen Trick: Die Standardnormalverteilung ist achsensymmetrisch (die Funktion spiegelt sich also an der y-Achse). Das heißt, sie verläuft links und rechts von der y-Achse genau spiegelverkehrt.
-
-Es gilt: `\(Φ(−x) = 1−Φ(x)\)`
-
-Wenn Sie einen negativen z Wert haben, suchen Sie also zunächst den dazugehörigen positiven z-Wert. Dann rechnen Sie 1 minus den positiven z-Wert.
-
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-**Standardnormalverteilung (N~0,1):**
-
-* Um die Standardnormalverteilung Tabelle nutzen zu können, brauchen Sie entweder einen gegebenen z-Wert oder eine gegebene Wahrscheinlichkeit.
-
-* Die Berechnung eines z-Werts kann für jeden Wert einer normalverteilten Variable erfolgen
-
-* Dieser Prozess nennt sich **z-Transformation** oder kurz **Standardisierung**
-
-* Dafür braucht man nichts weiter als den Mittelwert und die Standardabweichung der Verteilung
-
-`$$z_{i} = \frac{x_{i} - \bar{x}}{s}$$`
-
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-**Standardnormalverteilung (N~0,1):**
-
-Vorteil der Standardisierung:
-
-* Messwerte von Personen verschiedener Populationen sind oft nicht direkt **vergleichbar**, z.B. die Leistung eines Mädchens in Kugelstoßen mit jener eines Jungen
-
-* Dennoch möchte man ausdrücken können, wie gut die beiden Leistungen innerhalb der Bezugsgruppe sind
-
-* Der Standardmesswert `\(z_{i}\)`: bezieht den beobachteten Messwert `\(x_{i}\)` der i-ten Person auf den Mittelwert `\(\bar{x}\)` der Gruppe und drückt die Abweichung in Standardeinheiten `\(s\)` aus
-
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-**Standardnormalverteilung (N~0,1):**
-
-Beispiel: Standardisierung Kugelstoßen `\((N=5)\)`; Vergleich Frauen (w) und Männer (m)
-
-.center[
-&lt;table&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; ID &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Meter_m &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 8 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 12 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Meter_w &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-]
-.left[Lösungsweg (für 3. Mann):] 
-
-`$$\bar{x}=\frac{8 + 9 + 12 + 9 + 9}{5}=\frac{47}{5}=9.4$$`
-`$$s=\sqrt{\frac{(8-9.4)^2 + (9-9.4)^2 + (12-9.4)^2 + (9-9.4)^2 + (9-9.4)^2}{5-1}}=\sqrt{\frac{9.2}{4}}=1.52$$`
-
-`$$z_{3}=\frac{12 - 9.4}{1.52}= 1.71$$`
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-**Standardnormalverteilung (N~0,1):**
-
-Beispiel: Standardisierung Kugelstoßen `\((N=5)\)`; Vergleich Frauen (w) und Männer (m)
-
-.center[
-&lt;table&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; ID &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Meter_m &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 8 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 12 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Meter_w &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-Nach der Standardisierung jeden Werts anhand Mittelwert und Standardabweichung der Referenzgruppe:
-
-&lt;table&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; ID &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; z_m &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; -0.92 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; -0.26 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.71 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; -0.26 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; -0.26 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; z_w &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 1.40 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 0.53 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; -1.23 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; -0.35 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; -0.35 &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-]
-
-**Interpretation:** Während z.B. die 2. Frau absolut weniger weit gestoßen hat (7m) als der 2. Mann (9m), liegt sie relativ zum Mittel der Gruppen vor ihm (0.53 &gt; -0.26).
-
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-#### Nutzen von Wahrscheinlichkeitsverteilungen zur Quantifizierung des Stichprobenfehlers:
-
-**Z.B. Standardnormalverteilung (N~0,1):**
-
-Beispiel 1:
-
-* gegeben sei eine normalverteilte Variable X mit Mittelwert von 11 und Varianz von 5.53
-
-* Wie hoch ist die Wahrscheinlichkeit das X nicht mehr als 14.5 Punkte aufweist?
-
-* Zunächst berechnen wir den z-Wert für `\(X=14.5\)` (siehe Standardisierung)
-
-`$$z=\frac{14.5-11}{\sqrt{5.53}}=1.49$$`
-* In der z-Tabelle schlagen wir nach, wie wahrscheinlich ein z-Wert von höchstens 1.49 ist
-
-`$$P(Z \leq 1.49) = 0.9319$$`
-* Mit einer 93%-igen Wahrscheinlichkeit ist ein zufällig aus der Verteilung gezogener Wert nicht größer als 14.5
-
----
-class: top, left
-### Stichprobe, Grundgesamtheit und Stichprobenfehler
-
-#### Nutzen von Wahrscheinlichkeitsverteilungen zur Quantifizierung des Stichprobenfehlers:
-
-**Z.B. Standardnormalverteilung (N~0,1):**
-
-Beispiel 2:
-
-* gegeben sei eine normalverteilte Variable X mit Mittelwert von 11 und Varianz von 5.53
-
-* Wie hoch ist die Wahrscheinlichkeit, dass X mehr als 14.5 Punkte aufweist?
-
-* Zunächst berechnen wir den z-Wert für `\(X=14.5\)` (siehe Standardisierung)
-
-`$$z=\frac{14.5-11}{\sqrt{5.53}}=1.49$$`
-* In der z-Tabelle schlagen wir nach, wie wahrscheinlich ein z-Wert von größer als 1.49 ist
-
-`$$P(Z &gt; 1.49) = 1- P(Z \leq 1.49)= 1-0.9319=0.0681$$`
-* Mit einer 6.8%-igen Wahrscheinlichkeit ist ein zufällig aus der Verteilung gezogener Wert größer als 14.5.
-
 
 ---
 class: top, left
