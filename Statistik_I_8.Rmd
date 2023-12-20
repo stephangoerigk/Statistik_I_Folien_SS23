@@ -59,7 +59,7 @@ class: middle, left
 # Statistik I
 
 ### Einheit 8: $t$-Test
-##### 21.06.2023 | Prof. Dr. phil. Stephan Goerigk
+##### 20.12.2023 | Prof. Dr. phil. Stephan Goerigk
 
 ---
 class: top, left
@@ -197,74 +197,9 @@ class: top, left
 
 #### Ein-Stichproben $t$-Test
 
-.pull-left[
-* Weicht der Mittelwert einer Zufallsstichprobe aus dem Irak, $\bar{x}_{I}$, in einem in Deutschland entwickelten sprachfreien Intelligenztest signifikant vom Populationsparameter in Deutschland, $μ_{D} = 100$, ab?
-
-* WICHTIG: Nur die iranische Stichprobe wurde in der Studie rekrutiert und gemessen. Der deutsche Referenzwert wird vorgegeben.
-
-* $n = 108$, Testpunkte normalverteilt, $\bar{x}_{I} = 99.32$ , $s_{I} = 4.03$
-
-* $H_{0}$: $μ_{I} = 100$
-* $H_{1}$: $μ_{I} \neq 100$; $α=0.05$
-]
-
-.pull-right[
-.center[
-```{r echo=FALSE, out.width="450px", out.height="450px"}
-df <- data.frame(PF = rnorm(100000, mean = 99.32, sd = 4.03))
-ggplot(df, aes(x = PF)) + 
-    geom_histogram(aes(y =..density..),
-                   breaks = seq(70, 130, by = 2), 
-                   colour = "black", 
-                   fill = "white", bins = 100) +
-  scale_x_continuous(breaks = c(70,90,99.32,110,130)) +
-  geom_vline(xintercept = 100, linetype = "dashed", colour = "red") +
-  geom_vline(xintercept = 99.32, linetype = "dashed", colour = "blue") +
-  stat_function(fun = dnorm, args = list(mean = mean(df$PF), sd = sd(df$PF))) +
-  labs(x = "IQ", y = "relative Häufigkeit") +
-   theme_classic() +
-  theme(text = element_text(size = 25))
-```
-]
-]
-
----
-class: top, left
-### $t$-Test
-
-#### Ein-Stichproben $t$-Test
-
-**Beispiel 1:**
-
 <small>
 
-* $n = 108$, Testpunkte normalverteilt, $\bar{x}_{I} = 99.32$ , $s_{I} = 4.03$
-
-* $H_{0}$: $μ_{I} = 100$; $H_{1}$: $μ_{I} \neq 100$; $α=0.05$
-
-Teststatistik:
-
-$$t = \frac{\bar{X}-μ}{\frac{\hat{\sigma}}{\sqrt{n}}} \sim t_{n-1}$$
-
-$$t = \frac{99.32 − 100}{\frac{4.03}{\sqrt{108}}} = −1.75$$
-
-* $df = 107$; $t_{100;0.975} = 1.98$ (kritischer Wert)
-
-* $1.75 < 1.98 \rightarrow$ $H_{0}$ beibehalten
-
-* Interpretation: Der Mittelwert der Zufallsstichprobe aus dem Irak unterscheidet sich nicht signifikant vom deutschen Referenzwert.
-
-</small>
-
----
-class: top, left
-### $t$-Test
-
-#### Ein-Stichproben $t$-Test
-
-<small>
-
-**Beispiel 2:**
+**Beispiel:**
 
 * Stichprobe von $n = 36$ Schülern mit Unterricht in Geometrie absolvieren Raumvorstellungstest normiert in Population auf $μ = 100$
 
