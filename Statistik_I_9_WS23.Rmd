@@ -291,9 +291,9 @@ kable(df[,], col.names = NULL)%>%
   kable_styling(font_size = 18)
 ```
 
-Die Kovarianz von Schlaf und Konzentration in dieser Stichprobe berechnet sich wie folgt $(\bar{x}=8.63, \bar{y}=`r round(mean(df2[,3]),2)`)$:
+Die Kovarianz von Schlaf und Konzentration in dieser Stichprobe berechnet sich wie folgt $(\bar{x}=`r round(mean(df2[,2]), 2)`, \bar{y}=`r round(mean(df2[,3]),2)`)$:
 
-$$cov_{x,y}=\frac{(6-8.63)\cdot(2-5.56)+(7-8.63)\cdot(2-5.56)+...}{`r N-1`}=`r round(cov(df2[,2], df2[,3]), 2)`$$
+$$cov_{x,y}=\frac{(`r df2[1,2]`-`r round(mean(df2[,2]), 2)`)\cdot(`r df2[1,3]`-`r round(mean(df2[,3]), 2)`)+(`r df2[2,2]`-`r round(mean(df2[,2]), 2)`)\cdot(`r df2[2,3]`-`r round(mean(df2[,3]), 2)`)+...}{`r N-1`}=`r round(cov(df2[,2], df2[,3]), 2)`$$
 * Der Zusammenhang zwischen Schlaf und Konzentrationsfähigkeit ist also positiv.
 
 * Über die relative Höhe des Zusammenhangs sagt dieser Wert nichts aus. Dafür brauchen wir ein standardisiertes Maß.
@@ -378,7 +378,7 @@ Um den Korrelationskoeffizienten $(r)$ für unser Beispiel zu bestimmen, müssen
 * $\hat{\sigma}_x = `r round(sd(df2[,2]), 2)`$
 * $\hat{\sigma}_y = `r round(sd(df2[,3]), 2)`$
 
-$$cov_{x,y}=\frac{(6-8.63)\cdot(2-5.56)+(7-8.63)\cdot(2-5.56)+...}{`r N-1`}=`r round(cov(df2[,2], df2[,3]), 2)`$$
+$$cov_{x,y}=\frac{(`r df2[1,2]`-`r round(mean(df2[,2]), 2)`)\cdot(`r df2[1,3]`-`r round(mean(df2[,3]), 2)`)+(`r df2[2,2]`-`r round(mean(df2[,2]), 2)`)\cdot(`r df2[2,3]`-`r round(mean(df2[,3]), 2)`)+...}{`r N-1`}=`r round(cov(df2[,2], df2[,3]), 2)`$$
 
 $$r_{xy}=\frac{cov_{x,y}}{\hat{\sigma}_x \cdot \hat{\sigma}_y}=\frac{`r round(cov(df2[,2], df2[,3]), 2)`}{`r round(sd(df2[,2]), 2)` \cdot `r round(sd(df2[,3]), 2)`}= `r round(round(cov(df2[,2], df2[,3]), 2) / (round(sd(df2[,2]), 2) * round(sd(df2[,3]), 2)),2)`$$
 
